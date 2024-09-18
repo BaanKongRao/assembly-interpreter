@@ -14,11 +14,6 @@ import Utils.SyntaxError;
  * @param input the input string to be tokenized
  */
 public class Lexer {
-
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-
     /**
      * This enum represents token types and their corresponding regex patterns.
      */

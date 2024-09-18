@@ -103,7 +103,8 @@ public class Parser {
         Token.NUMBER reg2 = parseNumber(tokensQueue.poll());
 
         Pair<String, Position> labelValueAndStartPos = findLabelValueAndStartPos(label, instToken.start);
-        return new J_TYPE(labelValueAndStartPos.left, instToken.value, reg1.value, reg2.value, labelValueAndStartPos.right, reg2.end);
+        return new J_TYPE(labelValueAndStartPos.left, instToken.value, reg1.value, reg2.value,
+                labelValueAndStartPos.right, reg2.end);
     }
 
     private static Instruction parseOType(Token.O_TYPE instToken, Token.LABEL label, Queue<Token.Token> tokensQueue)
@@ -122,7 +123,8 @@ public class Parser {
         } catch (SyntaxError e) {
             try {
                 Token.LABEL labelToken = parseLabel(expectedNumberOrLabel);
-                return new FILL<String>(labelValueAndStartPos.left, labelToken.value, labelValueAndStartPos.right, labelToken.end);
+                return new FILL<String>(labelValueAndStartPos.left, labelToken.value, labelValueAndStartPos.right,
+                        labelToken.end);
             } catch (SyntaxError e2) {
                 Token.AbToken<?> token = (Token.AbToken<?>) expectedNumberOrLabel;
                 throw new SyntaxError("Expected Number or Label, got " + token.value, token.start);

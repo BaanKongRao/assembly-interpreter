@@ -1,7 +1,7 @@
 package Token;
 
 /**
- * Token interface
+ * Token interface for all tokens.
  * @see Token.AbToken
  */
 public interface Token {

@@ -12,7 +12,7 @@ public class Tester {
     public static void main(String[] args) {
         // testBits();
         // testLexer();
-        testParser();
+        // testParser();
     }
 
     public static void testBits() {
@@ -65,13 +65,15 @@ public class Tester {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
         List<Token> tokens = null;
         String input = sb.toString();
         try {
             tokens = Lexer.lex(input, filePath);
         } catch (SyntaxError e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         for (Token token : tokens) {
             System.out.println(token);
@@ -89,13 +91,15 @@ public class Tester {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
         List<Instruction> instructions = null;
         String input = sb.toString();
         try {
             instructions = Parser.parse(Lexer.lex(input, filePath));
         } catch (SyntaxError e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         for (Instruction instruction : instructions) {
             System.out.println(instruction);

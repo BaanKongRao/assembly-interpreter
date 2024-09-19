@@ -8,7 +8,11 @@ import Instruction.*;
 import Utils.Position;
 import Utils.SyntaxError;
 
+/**
+ * Parse a list of tokens into a list of instructions.
+ */
 public class Parser {
+    private Parser() {}
     /**
      * Parse a list of tokens into a list of instructions.
      * 

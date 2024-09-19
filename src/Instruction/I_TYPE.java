@@ -4,17 +4,27 @@ import Utils.Position;
 import Utils.Word;
 
 public class I_TYPE<T> extends AbInstruction {
-    public final String inst;
     public final Integer ra;
+    public final Position raStart;
     public final Integer rb;
-    public final T imm;
+    public final Position rbStart;
+    public final T offsetOrLabel;
+    public final Position offsetOrLabelStart;
 
-    public I_TYPE(String label, String inst, Integer ra, Integer rb, T imm, Position start) {
-        super(label, start);
-        this.inst = inst;
+    public I_TYPE(String label, String inst, Integer ra, Position raStart, Integer rb, Position rbStart, T offsetOrLabel, Position offsetOrLabelStart, Position start) {
+        super(label, inst, start);
         this.ra = ra;
+        this.raStart = raStart;
         this.rb = rb;
-        this.imm = imm;
+        this.rbStart = rbStart;
+        this.offsetOrLabel = offsetOrLabel;
+        this.offsetOrLabelStart = offsetOrLabelStart;
+    }
+
+    @Override
+    public void errorCheck() {
+        // TODO Implement this
+        throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
     }
 
     @Override
@@ -31,7 +41,7 @@ public class I_TYPE<T> extends AbInstruction {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + "(" + this.inst + ", " + this.ra + ", " + this.rb + ", " + this.imm
+        return this.getClass().getSimpleName() + "(" + this.inst + ", " + this.ra + ", " + this.rb + ", " + this.offsetOrLabel
                 + ")" + (this.label == null ? "" : " with label:" + this.label) + " at " + start.toString();
     }
 }

@@ -7,6 +7,8 @@ import Utils.Word;
  * @see Instruction.AbInstruction
  */
 public interface Instruction {
+    public void errorCheck();
+
     public Word toBinary();
     
     public String toBinaryString();

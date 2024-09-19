@@ -4,15 +4,23 @@ import Utils.Position;
 import Utils.Word;
 
 public class J_TYPE extends AbInstruction {
-    public final String inst;
     public final Integer ra;
+    public final Position raStart;
     public final Integer rb;
+    public final Position rbStart;
 
-    public J_TYPE(String label, String inst, Integer ra, Integer rb, Position start) {
-        super(label, start);
-        this.inst = inst;
+    public J_TYPE(String label, String inst, Integer ra, Position raStart, Integer rb, Position rbStart, Position start) {
+        super(label, inst, start);
         this.ra = ra;
+        this.raStart = raStart;
         this.rb = rb;
+        this.rbStart = rbStart;
+    }
+
+    @Override
+    public void errorCheck() {
+        // TODO Implement this
+        throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
     }
 
     @Override

@@ -4,17 +4,27 @@ import Utils.Position;
 import Utils.Word;
 
 public class R_TYPE extends AbInstruction {
-    public final String inst;
     public final Integer ra;
+    public final Position raStart;
     public final Integer rb;
+    public final Position rbStart;
     public final Integer rd;
+    public final Position rdStart;
 
-    public R_TYPE(String label, String inst, Integer ra, Integer rb, Integer rd, Position start) {
-        super(label, start);
-        this.inst = inst;
+    public R_TYPE(String label, String inst, Integer ra, Position raStart, Integer rb, Position rbStart, Integer rd, Position rdStart, Position start) {
+        super(label, inst, start);
         this.ra = ra;
+        this.raStart = raStart;
         this.rb = rb;
+        this.rbStart = rbStart;
         this.rd = rd;
+        this.rdStart = rdStart;
+    }
+
+    @Override
+    public void errorCheck() {
+        // TODO Implement this
+        throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
     }
 
     @Override

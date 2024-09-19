@@ -12,7 +12,7 @@ public class Tester {
     public static void main(String[] args) {
         // testBits();
         // testLexer();
-        // testParser();
+        testParser();
     }
 
     public static void testBits() {

@@ -21,7 +21,7 @@ public class Lexer {
         Line_terminator("\r?\n"),
         Whitespace("[\s\t]+"),
         Comment(";.*"),
-        Label("[a-zA-Z][a-zA-Z0-9]{0,6}"),
+        Label("[a-zA-Z][a-zA-Z0-9]{0,5}"),
         R_type("(add|nand)"),
         I_type("(lw|sw|beq)"),
         J_type("(jalr)"),

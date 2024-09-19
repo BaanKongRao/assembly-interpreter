@@ -4,11 +4,14 @@ import Utils.Position;
 import Utils.Word;
 
 public class O_TYPE extends AbInstruction {
-    public final String inst;
-
     public O_TYPE(String label, String inst, Position start) {
-        super(label, start);
-        this.inst = inst;
+        super(label, inst, start);
+    }
+
+    @Override
+    public void errorCheck() {
+        // TODO Implement this
+        throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
     }
 
     @Override

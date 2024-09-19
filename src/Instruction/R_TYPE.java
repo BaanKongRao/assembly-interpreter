@@ -34,7 +34,7 @@ public class R_TYPE extends AbInstruction {
     }
 
     @Override
-    public void execute() {
+    public int execute(Word[] registers, Word[] memory, int pc) {
         // TODO Implement this
         throw new UnsupportedOperationException("Unimplemented method 'execute'");
     }

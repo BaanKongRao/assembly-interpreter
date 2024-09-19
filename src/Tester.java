@@ -55,7 +55,7 @@ public class Tester {
     }
 
     public static void testLexer() {
-        String filePath = "F:\\java\\assembly-interpreter\\src\\tester.fasm";
+        String filePath = "src/tester.fasm";
         File file = new File(filePath);
         StringBuilder sb = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -81,7 +81,7 @@ public class Tester {
     }
 
     public static void testParser() {
-        String filePath = "F:\\java\\assembly-interpreter\\src\\tester.fasm";
+        String filePath = "src/tester1.fasm";
         File file = new File(filePath);
         StringBuilder sb = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {

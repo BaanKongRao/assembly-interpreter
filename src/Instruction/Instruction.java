@@ -13,7 +13,7 @@ public interface Instruction {
     
     public String toBinaryString();
 
-    public void execute();
+    public int execute(Word[] registers, Word[] memory, int pc);
 
     @Override
     public String toString();

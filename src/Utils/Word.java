@@ -46,9 +46,10 @@ public class Word extends Bits {
         }
         return word;
     }
-    
+
     /**
      * Performs bitwise AND operation on two words.
+     * 
      * @param word1 the first word
      * @param word2 the second word
      * @return the new word that is the result of the operation
@@ -63,6 +64,7 @@ public class Word extends Bits {
 
     /**
      * Adds two words.
+     * 
      * @param word1 the first word
      * @param word2 the second word
      * @return the sum

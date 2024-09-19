@@ -9,8 +9,9 @@ public class J_TYPE extends AbInstruction {
     public final Integer rb;
     public final Position rbStart;
 
-    public J_TYPE(String label, String inst, Integer ra, Position raStart, Integer rb, Position rbStart, Position start) {
-        super(label, inst, start);
+    public J_TYPE(String label, Position labelStart, String inst, Position instStart, Integer ra, Position raStart,
+            Integer rb, Position rbStart) {
+        super(label, labelStart, inst, instStart);
         this.ra = ra;
         this.raStart = raStart;
         this.rb = rb;
@@ -37,8 +38,7 @@ public class J_TYPE extends AbInstruction {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + "(" + this.inst + ", " + this.ra + ", " + this.rb + ")"
-                + (this.label == null ? "" : " with label:" + this.label) + " at " + start.toString();
+        return super.toString(this.inst + ", " + this.ra + ", " + this.rb);
     }
 
 }

@@ -11,8 +11,9 @@ public class I_TYPE<T> extends AbInstruction {
     public final T offsetOrLabel;
     public final Position offsetOrLabelStart;
 
-    public I_TYPE(String label, String inst, Integer ra, Position raStart, Integer rb, Position rbStart, T offsetOrLabel, Position offsetOrLabelStart, Position start) {
-        super(label, inst, start);
+    public I_TYPE(String label, Position labelStart, String inst, Position instStart, Integer ra, Position raStart,
+            Integer rb, Position rbStart, T offsetOrLabel, Position offsetOrLabelStart) {
+        super(label, labelStart, inst, instStart);
         this.ra = ra;
         this.raStart = raStart;
         this.rb = rb;
@@ -41,7 +42,6 @@ public class I_TYPE<T> extends AbInstruction {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + "(" + this.inst + ", " + this.ra + ", " + this.rb + ", " + this.offsetOrLabel
-                + ")" + (this.label == null ? "" : " with label:" + this.label) + " at " + start.toString();
+        return super.toString(this.inst + ", " + this.ra + ", " + this.rb + ", " + this.offsetOrLabel.toString());
     }
 }

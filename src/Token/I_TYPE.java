@@ -2,7 +2,6 @@ package Token;
 
 import Utils.Position;
 
-
 /**
  * Represents I_TYPE instruction command
  * 

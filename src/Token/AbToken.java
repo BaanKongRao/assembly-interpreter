@@ -4,10 +4,11 @@ import Utils.Position;
 
 /**
  * Abstract Token class
+ * 
  * @param <T> the type of the value of the token
  * 
- * Basic implementation of the Token interface
- * including the value of the token and the start and end positions
+ *            Basic implementation of the Token interface
+ *            including the value of the token and the start and end positions
  */
 public abstract class AbToken<T> implements Token {
     public final T value;
@@ -15,6 +16,7 @@ public abstract class AbToken<T> implements Token {
 
     /**
      * Constructor for AbToken
+     * 
      * @param value the value of the token
      * @param start the start position of the token
      */

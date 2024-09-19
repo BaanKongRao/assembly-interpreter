@@ -11,8 +11,9 @@ public class R_TYPE extends AbInstruction {
     public final Integer rd;
     public final Position rdStart;
 
-    public R_TYPE(String label, String inst, Integer ra, Position raStart, Integer rb, Position rbStart, Integer rd, Position rdStart, Position start) {
-        super(label, inst, start);
+    public R_TYPE(String label, Position labelStart, String inst, Position instStart, Integer ra, Position raStart,
+            Integer rb, Position rbStart, Integer rd, Position rdStart) {
+        super(label, labelStart, inst, instStart);
         this.ra = ra;
         this.raStart = raStart;
         this.rb = rb;
@@ -41,7 +42,6 @@ public class R_TYPE extends AbInstruction {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + "(" + this.inst + ", " + this.ra + ", " + this.rb + ", " + this.rd
-                + ")" + (this.label == null ? "" : " with label:" + this.label) + " at " + start.toString();
+        return super.toString(this.inst + ", " + this.ra + ", " + this.rb + ", " + this.rd);
     }
 }

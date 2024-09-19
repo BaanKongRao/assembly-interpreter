@@ -107,7 +107,7 @@ public class Bits extends BitSet {
         }
         super.or(set);
     }
-    
+
     @Override
     public void xor(BitSet set) {
         if (set.length() > bitsize) {
@@ -188,6 +188,7 @@ public class Bits extends BitSet {
 
     /**
      * Converts the bits to a long.
+     * 
      * @return the long value
      */
     public long toLong() {
@@ -200,6 +201,7 @@ public class Bits extends BitSet {
 
     /**
      * Converts the bits to a binary string.
+     * 
      * @return the binary string
      */
     public String toBinaryString() {
@@ -213,6 +215,7 @@ public class Bits extends BitSet {
 
     /**
      * Converts the bit set to a hexadecimal string.
+     * 
      * @return the hexadecimal string
      */
     public String toHexString() {
@@ -230,6 +233,7 @@ public class Bits extends BitSet {
 
     /**
      * Converts the long to a Bits object.
+     * 
      * @param l the long value
      * @return the Bits object
      */
@@ -293,6 +297,7 @@ public class Bits extends BitSet {
 
     /**
      * and operation between two bits objects.
+     * 
      * @param a the first bits object
      * @param b the second bits object
      * @return the new bits object that is the result of the operation
@@ -308,7 +313,9 @@ public class Bits extends BitSet {
     }
 
     /**
-     * Adds two bits objects and return new bits object. The bits objects must have the same size.
+     * Adds two bits objects and return new bits object. The bits objects must have
+     * the same size.
+     * 
      * @param a the first bits object
      * @param b the second bits object
      * @return the new bits object that is the sum of the two bits objects

@@ -12,7 +12,11 @@ import Utils.SyntaxError;
  * Parse a list of tokens into a list of instructions.
  */
 public class Parser {
-    private Parser() {}
+    private Parser() {
+    }
+
+    private static Queue<Token.Token> tokensQueue;
+
     /**
      * Parse a list of tokens into a list of instructions.
      * 
@@ -20,164 +24,175 @@ public class Parser {
      * @return the list of instructions
      */
     public static List<Instruction> parse(List<Token.Token> tokens) throws SyntaxError {
-        Queue<Token.Token> tokensQueue = new LinkedList<>(tokens);
+        tokensQueue = new LinkedList<>(tokens);
         List<Instruction> instructions = new LinkedList<>();
 
-        while (tokensQueue.peek() instanceof Token.LABEL
-                || tokensQueue.peek() instanceof Token.R_TYPE
-                || tokensQueue.peek() instanceof Token.I_TYPE
-                || tokensQueue.peek() instanceof Token.J_TYPE
-                || tokensQueue.peek() instanceof Token.O_TYPE
-                || tokensQueue.peek() instanceof Token.FILL) {
-            instructions.add(parseInstruction(tokensQueue));
+        while (switch (tokensQueue.peek()) {
+            case Token.LABEL l -> true;
+            case Token.R_TYPE r -> true;
+            case Token.I_TYPE i -> true;
+            case Token.J_TYPE j -> true;
+            case Token.O_TYPE o -> true;
+            case Token.FILL f -> true;
+            default -> false;
+        }) {
+            instructions.add(parseInstruction());
         }
 
-        Token.Token expectedEOF = tokensQueue.poll();
-        if (!(expectedEOF instanceof Token.EOF)) {
-            Token.AbToken<?> token = (Token.AbToken<?>) expectedEOF;
-            throw new SyntaxError("Expected EOF, got " + token.value, token.start);
-        }
-
-        return instructions;
+        return switch (tokensQueue.peek()) {
+            case Token.EOF e -> instructions;
+            default -> {
+                Token.AbToken<?> token = (Token.AbToken<?>) tokensQueue.peek();
+                throw new SyntaxError("Expected EOF, got " + token.value, token.start);
+            }
+        };
     }
 
-    private static Instruction parseInstruction(Queue<Token.Token> tokensQueue) throws SyntaxError {
+    private static Instruction parseInstruction() throws SyntaxError {
         Token.LABEL label = null;
-        Token.Token labelOrInst = tokensQueue.poll();
-        if (labelOrInst instanceof Token.LABEL) {
-            label = (Token.LABEL) labelOrInst;
-            labelOrInst = tokensQueue.poll();
+        if (tokensQueue.peek() instanceof Token.LABEL l) {
+            label = (Token.LABEL) l;
+            tokensQueue.poll();
         }
 
-        if (labelOrInst instanceof Token.R_TYPE) {
-            return parseRType(label, (Token.R_TYPE) labelOrInst, tokensQueue);
-        } else if (labelOrInst instanceof Token.I_TYPE) {
-            return parseIType(label, (Token.I_TYPE) labelOrInst, tokensQueue);
-        } else if (labelOrInst instanceof Token.J_TYPE) {
-            return parseJType(label, (Token.J_TYPE) labelOrInst, tokensQueue);
-        } else if (labelOrInst instanceof Token.O_TYPE) {
-            return parseOType(label, (Token.O_TYPE) labelOrInst, tokensQueue);
-        } else if (labelOrInst instanceof Token.FILL) {
-            return parseFill(label, (Token.FILL) labelOrInst, tokensQueue);
-        } else {
-            Token.AbToken<?> token = (Token.AbToken<?>) labelOrInst;
-            throw new SyntaxError("Expected instruction, got " + token.value, token.start);
-        }
+        return switch (tokensQueue.peek()) {
+            case Token.R_TYPE r -> {
+                tokensQueue.poll();
+                yield parseRType(label, r);
+            }
+            case Token.I_TYPE i -> {
+                tokensQueue.poll();
+                yield parseIType(label, i);
+            }
+            case Token.J_TYPE j -> {
+                tokensQueue.poll();
+                yield parseJType(label, j);
+            }
+            case Token.O_TYPE o -> {
+                tokensQueue.poll();
+                yield parseOType(label, o);
+            }
+            case Token.FILL f -> {
+                tokensQueue.poll();
+                yield parseFill(label, f);
+            }
+            default -> {
+                Token.AbToken<?> token = (Token.AbToken<?>) tokensQueue.peek();
+                throw new SyntaxError("Expected instruction, got " + token.value, token.start);
+            }
+        };
     }
 
-    private static Instruction parseRType(Token.LABEL label, Token.R_TYPE instToken, Queue<Token.Token> tokensQueue)
+    private static Instruction parseRType(Token.LABEL label, Token.R_TYPE instToken)
             throws SyntaxError {
-        Token.NUMBER ra = parseNumber(tokensQueue.poll());
-        Token.NUMBER rb = parseNumber(tokensQueue.poll());
-        Token.NUMBER rd = parseNumber(tokensQueue.poll());
+        Token.NUMBER ra = parseNumber();
+        Token.NUMBER rb = parseNumber();
+        Token.NUMBER rd = parseNumber();
 
         return new R_TYPE(Optional.ofNullable(label).map(l -> l.value).orElse(null),
-                            instToken.value,
-                            ra.value,
-                            ra.start,
-                            rb.value,
-                            rb.start,
-                            rd.value,
-                            rd.start,
-                            findStartPos(label, instToken));
+                Optional.ofNullable(label).map(l -> l.start).orElse(null),
+                instToken.value,
+                instToken.start,
+                ra.value,
+                ra.start,
+                rb.value,
+                rb.start,
+                rd.value,
+                rd.start);
     }
 
-    private static Instruction parseIType(Token.LABEL label, Token.I_TYPE instToken, Queue<Token.Token> tokensQueue)
+    private static Instruction parseIType(Token.LABEL label, Token.I_TYPE instToken)
             throws SyntaxError {
-        Token.NUMBER ra = parseNumber(tokensQueue.poll());
-        Token.NUMBER rb = parseNumber(tokensQueue.poll());
-        Token.Token expectedOffsetOrLabel = tokensQueue.poll();
+        Token.NUMBER ra = parseNumber();
+        Token.NUMBER rb = parseNumber();
         String labelValue = Optional.ofNullable(label).map(l -> l.value).orElse(null);
-        Position startPos = findStartPos(label, instToken);
-        try {
-            Token.NUMBER offset = parseNumber(expectedOffsetOrLabel);
-            return new I_TYPE<Integer>(labelValue,
-                                        instToken.value,
-                                        ra.value,
-                                        ra.start,
-                                        rb.value,
-                                        rb.start,
-                                        offset.value,
-                                        offset.start,
-                                        startPos);
-        } catch (SyntaxError e) {
-            try {
-                Token.LABEL labelToken = parseLabel(expectedOffsetOrLabel);
-                return new I_TYPE<String>(labelValue,
-                                            instToken.value,
-                                            ra.value,
-                                            ra.start,
-                                            rb.value,
-                                            rb.start,
-                                            labelToken.value,
-                                            labelToken.start,
-                                            startPos);
-            } catch (SyntaxError e2) {
-                Token.AbToken<?> token = (Token.AbToken<?>) expectedOffsetOrLabel;
+        Position labelStart = Optional.ofNullable(label).map(l -> l.start).orElse(null);
+
+        return switch (tokensQueue.peek()) {
+            case Token.NUMBER offset -> {
+                tokensQueue.poll();
+                yield new I_TYPE<Integer>(labelValue,
+                        labelStart,
+                        instToken.value,
+                        instToken.start,
+                        ra.value,
+                        ra.start,
+                        rb.value,
+                        rb.start,
+                        offset.value,
+                        offset.start);
+            }
+            case Token.LABEL label2 -> {
+                tokensQueue.poll();
+                yield new I_TYPE<String>(labelValue,
+                        labelStart,
+                        instToken.value,
+                        instToken.start,
+                        ra.value,
+                        ra.start,
+                        rb.value,
+                        rb.start,
+                        label2.value,
+                        label2.start);
+            }
+            default -> {
+                Token.AbToken<?> token = (Token.AbToken<?>) tokensQueue.peek();
                 throw new SyntaxError("Expected Offset or Label, got " + token.value, token.start);
             }
-        }
+        };
     }
 
-    private static Instruction parseJType(Token.LABEL label, Token.J_TYPE instToken, Queue<Token.Token> tokensQueue)
+    private static Instruction parseJType(Token.LABEL label, Token.J_TYPE instToken)
             throws SyntaxError {
-        Token.NUMBER ra = parseNumber(tokensQueue.poll());
-        Token.NUMBER rb = parseNumber(tokensQueue.poll());
+        Token.NUMBER ra = parseNumber();
+        Token.NUMBER rb = parseNumber();
 
         return new J_TYPE(Optional.ofNullable(label).map(l -> l.value).orElse(null),
-                            instToken.value,
-                            ra.value,
-                            ra.start,
-                            rb.value,
-                            rb.start,
-                            findStartPos(label, instToken));
+                Optional.ofNullable(label).map(l -> l.start).orElse(null),
+                instToken.value,
+                instToken.start,
+                ra.value,
+                ra.start,
+                rb.value,
+                rb.start);
     }
 
-    private static Instruction parseOType(Token.LABEL label, Token.O_TYPE instToken, Queue<Token.Token> tokensQueue)
+    private static Instruction parseOType(Token.LABEL label, Token.O_TYPE instToken)
             throws SyntaxError {
         return new O_TYPE(Optional.ofNullable(label).map(l -> l.value).orElse(null),
-                            instToken.value,
-                            findStartPos(label, instToken));
+                Optional.ofNullable(label).map(l -> l.start).orElse(null),
+                instToken.value,
+                instToken.start);
     }
 
-    private static Instruction parseFill(Token.LABEL label, Token.FILL instToken, Queue<Token.Token> tokensQueue)
+    private static Instruction parseFill(Token.LABEL label, Token.FILL instToken)
             throws SyntaxError {
-        Token.Token expectedNumberOrLabel = tokensQueue.poll();
         String labelValue = Optional.ofNullable(label).map(l -> l.value).orElse(null);
-        Position startPos = findStartPos(label, instToken);
-        try {
-            Token.NUMBER number = parseNumber(expectedNumberOrLabel);
-            return new FILL<Integer>(labelValue, number.value, number.start, startPos);
-        } catch (SyntaxError e) {
-            try {
-                Token.LABEL labelToken = parseLabel(expectedNumberOrLabel);
-                return new FILL<String>(labelValue, labelToken.value, labelToken.start, startPos);
-            } catch (SyntaxError e2) {
-                Token.AbToken<?> token = (Token.AbToken<?>) expectedNumberOrLabel;
+        Position labelStart = Optional.ofNullable(label).map(l -> l.start).orElse(null);
+
+        return switch (tokensQueue.peek()) {
+            case Token.NUMBER number -> {
+                tokensQueue.poll();
+                yield new FILL<Integer>(labelValue, labelStart, instToken.start, number.value, number.start);
+            }
+            case Token.LABEL label2 -> {
+                tokensQueue.poll();
+                yield new FILL<String>(labelValue, labelStart, instToken.start, label2.value, label2.start);
+            }
+            default -> {
+                Token.AbToken<?> token = (Token.AbToken<?>) tokensQueue.peek();
                 throw new SyntaxError("Expected Number or Label, got " + token.value, token.start);
             }
-        }
+        };
     }
 
-    private static Token.NUMBER parseNumber(Token.Token token) throws SyntaxError {
-        if (token instanceof Token.NUMBER) {
-            return (Token.NUMBER) token;
+    private static Token.NUMBER parseNumber() throws SyntaxError {
+        if (tokensQueue.peek() instanceof Token.NUMBER number) {
+            tokensQueue.poll();
+            return number;
         } else {
-            Token.AbToken<?> abToken = (Token.AbToken<?>) token;
-            throw new SyntaxError("Expected Number, got " + abToken.value, abToken.start);
+            Token.AbToken<?> token = (Token.AbToken<?>) tokensQueue.peek();
+            throw new SyntaxError("Expected Number, got " + token.value, token.start);
         }
-    }
-
-    private static Token.LABEL parseLabel(Token.Token token) throws SyntaxError {
-        if (token instanceof Token.LABEL) {
-            return (Token.LABEL) token;
-        } else {
-            Token.AbToken<?> abToken = (Token.AbToken<?>) token;
-            throw new SyntaxError("Expected Label, got " + abToken.value, abToken.start);
-        }
-    }
-
-    private static Position findStartPos(Token.LABEL label,Token.AbToken<?> token) {
-        return label == null ? token.start : label.start;
     }
 }

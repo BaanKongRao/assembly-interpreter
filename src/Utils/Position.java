@@ -4,9 +4,10 @@ package Utils;
  * Position class
  * 
  * Represents a position in a file
+ * 
  * @param filename the name of the file
- * @param line the line number
- * @param column the column number
+ * @param line     the line number
+ * @param column   the column number
  */
 public record Position(String filename, int line, int column) {
     public Position {

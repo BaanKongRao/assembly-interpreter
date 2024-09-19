@@ -14,7 +14,9 @@ import Utils.SyntaxError;
  * @param input the input string to be tokenized
  */
 public class Lexer {
-    private Lexer() {}
+    private Lexer() {
+    }
+
     /**
      * This enum represents token types and their corresponding regex patterns.
      */

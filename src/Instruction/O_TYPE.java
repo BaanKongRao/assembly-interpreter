@@ -4,8 +4,8 @@ import Utils.Position;
 import Utils.Word;
 
 public class O_TYPE extends AbInstruction {
-    public O_TYPE(String label, String inst, Position start) {
-        super(label, inst, start);
+    public O_TYPE(String label, Position labelStart, String inst, Position instStart) {
+        super(label, labelStart, inst, instStart);
     }
 
     @Override
@@ -28,8 +28,7 @@ public class O_TYPE extends AbInstruction {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + "(" + this.inst + ")"
-                + (this.label == null ? "" : " with label:" + this.label) + " at " + start.toString();
+        return super.toString(this.inst);
     }
 
 }

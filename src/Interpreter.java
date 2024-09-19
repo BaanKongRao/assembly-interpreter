@@ -13,7 +13,8 @@ import Utils.Word;
  * This class is responsible for interpreting the user input and executing the
  */
 public class Interpreter {
-    private Interpreter() {}
+    private Interpreter() {
+    }
 
     private static final int REGISTER_SIZE = 8;
     private static final int MEMORY_SIZE = 65536;

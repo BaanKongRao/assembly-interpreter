@@ -65,7 +65,7 @@ public class Tester {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException(e);
+            return;
         }
         List<Token> tokens = null;
         String input = sb.toString();
@@ -73,7 +73,7 @@ public class Tester {
             tokens = Lexer.lex(input, filePath);
         } catch (SyntaxError e) {
             e.printStackTrace();
-            throw new RuntimeException(e);
+            return;
         }
         for (Token token : tokens) {
             System.out.println(token);
@@ -91,7 +91,7 @@ public class Tester {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException(e);
+            return;
         }
         List<Instruction> instructions = null;
         String input = sb.toString();
@@ -99,7 +99,7 @@ public class Tester {
             instructions = Parser.parse(Lexer.lex(input, filePath));
         } catch (SyntaxError e) {
             e.printStackTrace();
-            throw new RuntimeException(e);
+            return;
         }
         for (Instruction instruction : instructions) {
             System.out.println(instruction);

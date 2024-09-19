@@ -292,6 +292,22 @@ public class Bits extends BitSet {
     }
 
     /**
+     * and operation between two bits objects.
+     * @param a the first bits object
+     * @param b the second bits object
+     * @return the new bits object that is the result of the operation
+     */
+    public static Bits and(Bits a, Bits b) {
+        if (a.size() != b.size()) {
+            throw new IllegalArgumentException("a.size(): " + a.size() + " != b.size(): " + b.size());
+        }
+        Bits and = new Bits(a.size());
+        and.clone(a);
+        and.and(b);
+        return and;
+    }
+
+    /**
      * Adds two bits objects and return new bits object. The bits objects must have the same size.
      * @param a the first bits object
      * @param b the second bits object

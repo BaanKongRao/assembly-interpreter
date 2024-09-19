@@ -6,8 +6,8 @@ import Utils.Word;
 public class O_TYPE extends AbInstruction {
     public final String inst;
 
-    public O_TYPE(String label, String inst, Position start, Position end) {
-        super(label, start, end);
+    public O_TYPE(String label, String inst, Position start) {
+        super(label, start);
         this.inst = inst;
     }
 

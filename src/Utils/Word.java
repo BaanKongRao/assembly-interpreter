@@ -46,6 +46,20 @@ public class Word extends Bits {
         }
         return word;
     }
+    
+    /**
+     * Performs bitwise AND operation on two words.
+     * @param word1 the first word
+     * @param word2 the second word
+     * @return the new word that is the result of the operation
+     */
+    public static Word and(Word word1, Word word2) {
+        Word result = new Word();
+        for (int i = 0; i < word1.length(); i++) {
+            result.set(i, word1.get(i) && word2.get(i));
+        }
+        return result;
+    }
 
     /**
      * Adds two words.

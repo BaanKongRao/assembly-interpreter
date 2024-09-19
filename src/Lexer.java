@@ -57,27 +57,27 @@ public class Lexer {
          * This method takes a string and returns a Token object based on the type of
          * the enum.
          * 
-         * @param s      The string to be converted into a Token object.
-         * @param start  The start position of the token.
-         * @param end    The end position of the token.
+         * @param s     The string to be converted into a Token object.
+         * @param start The start position of the token.
+         * @param end   The end position of the token.
          * @return A Token object based on the type of the enum.
          */
-        public Token createToken(String s, Position start, Position end) {
+        public Token createToken(String s, Position start) {
             switch (this) {
                 case R_type:
-                    return new R_TYPE(s, start, end);
+                    return new R_TYPE(s, start);
                 case I_type:
-                    return new I_TYPE(s, start, end);
+                    return new I_TYPE(s, start);
                 case J_type:
-                    return new J_TYPE(s, start, end);
+                    return new J_TYPE(s, start);
                 case O_type:
-                    return new O_TYPE(s, start, end);
+                    return new O_TYPE(s, start);
                 case Fill:
-                    return new FILL(start, end);
+                    return new FILL(start);
                 case Label:
-                    return new LABEL(s, start, end);
+                    return new LABEL(s, start);
                 case Number:
-                    return new NUMBER(Integer.parseInt(s), start, end);
+                    return new NUMBER(Integer.parseInt(s), start);
                 default:
                     return null;
             }
@@ -96,9 +96,10 @@ public class Lexer {
     }
 
     /**
-     * This method takes a string and a filename and returns a list of Token objects.
+     * This method takes a string and a filename and returns a list of Token
+     * objects.
      * 
-     * @param string The string to be tokenized.
+     * @param string   The string to be tokenized.
      * @param filename The name of the file.
      * @return A list of Token objects.
      * @throws SyntaxError
@@ -129,12 +130,12 @@ public class Lexer {
                 column += longestMatch;
             } else {
                 tokens.add(tokenMatcher.createToken(string.substring(index, index + longestMatch),
-                        new Position(filename, line, column), new Position(filename, line, column + longestMatch)));
+                        new Position(filename, line, column)));
                 column += longestMatch;
             }
             index += longestMatch;
         }
-        tokens.add(new EOF(new Position(filename, line, column), new Position(filename, line, column)));
+        tokens.add(new EOF(new Position(filename, line, column)));
         return tokens;
     }
 }

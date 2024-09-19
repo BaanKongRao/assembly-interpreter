@@ -8,8 +8,8 @@ public class J_TYPE extends AbInstruction {
     public final Integer ra;
     public final Integer rb;
 
-    public J_TYPE(String label, String inst, Integer ra, Integer rb, Position start, Position end) {
-        super(label, start, end);
+    public J_TYPE(String label, String inst, Integer ra, Integer rb, Position start) {
+        super(label, start);
         this.inst = inst;
         this.ra = ra;
         this.rb = rb;

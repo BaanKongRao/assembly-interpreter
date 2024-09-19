@@ -12,12 +12,15 @@ import Utils.Position;
 public abstract class AbToken<T> implements Token {
     public final T value;
     public final Position start;
-    public final Position end;
 
-    public AbToken(T value, Position start, Position end) {
+    /**
+     * Constructor for AbToken
+     * @param value the value of the token
+     * @param start the start position of the token
+     */
+    public AbToken(T value, Position start) {
         this.value = value;
         this.start = start;
-        this.end = end;
     }
 
     @Override

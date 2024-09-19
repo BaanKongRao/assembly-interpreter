@@ -2,15 +2,21 @@ package Instruction;
 
 import Utils.Position;
 
+/**
+ * Abstract class for all instructions.
+ */
 public abstract class AbInstruction implements Instruction {
     public final String label;
     public final Position start;
-    public final Position end;
 
-    public AbInstruction(String label, Position start, Position end) {
+    /**
+     * Constructor for AbInstruction
+     * @param label the label of the instruction
+     * @param start the start position of the instruction
+     */
+    public AbInstruction(String label, Position start) {
         this.label = label;
         this.start = start;
-        this.end = end;
     }
 
     public String toBinaryString() {

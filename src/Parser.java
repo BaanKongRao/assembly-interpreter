@@ -69,7 +69,7 @@ public class Parser {
 
         Pair<String, Position> labelValueAndStartPos = findLabelValueAndStartPos(label, instToken.start);
         return new R_TYPE(labelValueAndStartPos.left, instToken.value, reg1.value, reg2.value, reg3.value,
-                labelValueAndStartPos.right, reg3.end);
+                labelValueAndStartPos.right);
     }
 
     private static Instruction parseIType(Token.I_TYPE instToken, Token.LABEL label, Queue<Token.Token> tokensQueue)
@@ -81,15 +81,13 @@ public class Parser {
             Token.NUMBER offset = parseNumber(expectedOffsetOrLabel);
             Pair<String, Position> labelValueAndStartPos = findLabelValueAndStartPos(label, instToken.start);
             return new I_TYPE<Integer>(labelValueAndStartPos.left, instToken.value, reg1.value, reg2.value,
-                    offset.value, labelValueAndStartPos.right,
-                    offset.end);
+                    offset.value, labelValueAndStartPos.right);
         } catch (SyntaxError e) {
             try {
                 Token.LABEL labelToken = parseLabel(expectedOffsetOrLabel);
                 Pair<String, Position> labelValueAndStartPos = findLabelValueAndStartPos(label, instToken.start);
                 return new I_TYPE<String>(labelValueAndStartPos.left, instToken.value, reg1.value, reg2.value,
-                        labelToken.value, labelValueAndStartPos.right,
-                        labelToken.end);
+                        labelToken.value, labelValueAndStartPos.right);
             } catch (SyntaxError e2) {
                 Token.AbToken<?> token = (Token.AbToken<?>) expectedOffsetOrLabel;
                 throw new SyntaxError("Expected Number or Label, got " + token.value, token.start);
@@ -104,13 +102,13 @@ public class Parser {
 
         Pair<String, Position> labelValueAndStartPos = findLabelValueAndStartPos(label, instToken.start);
         return new J_TYPE(labelValueAndStartPos.left, instToken.value, reg1.value, reg2.value,
-                labelValueAndStartPos.right, reg2.end);
+                labelValueAndStartPos.right);
     }
 
     private static Instruction parseOType(Token.O_TYPE instToken, Token.LABEL label, Queue<Token.Token> tokensQueue)
             throws SyntaxError {
         Pair<String, Position> labelValueAndStartPos = findLabelValueAndStartPos(label, instToken.start);
-        return new O_TYPE(labelValueAndStartPos.left, instToken.value, labelValueAndStartPos.right, instToken.end);
+        return new O_TYPE(labelValueAndStartPos.left, instToken.value, labelValueAndStartPos.right);
     }
 
     private static Instruction parseFill(Token.FILL instToken, Token.LABEL label, Queue<Token.Token> tokensQueue)
@@ -119,12 +117,11 @@ public class Parser {
         Pair<String, Position> labelValueAndStartPos = findLabelValueAndStartPos(label, instToken.start);
         try {
             Token.NUMBER imm = parseNumber(expectedNumberOrLabel);
-            return new FILL<Integer>(labelValueAndStartPos.left, imm.value, labelValueAndStartPos.right, imm.end);
+            return new FILL<Integer>(labelValueAndStartPos.left, imm.value, labelValueAndStartPos.right);
         } catch (SyntaxError e) {
             try {
                 Token.LABEL labelToken = parseLabel(expectedNumberOrLabel);
-                return new FILL<String>(labelValueAndStartPos.left, labelToken.value, labelValueAndStartPos.right,
-                        labelToken.end);
+                return new FILL<String>(labelValueAndStartPos.left, labelToken.value, labelValueAndStartPos.right);
             } catch (SyntaxError e2) {
                 Token.AbToken<?> token = (Token.AbToken<?>) expectedNumberOrLabel;
                 throw new SyntaxError("Expected Number or Label, got " + token.value, token.start);

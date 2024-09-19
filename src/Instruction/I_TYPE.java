@@ -9,8 +9,8 @@ public class I_TYPE<T> extends AbInstruction {
     public final Integer rb;
     public final T imm;
 
-    public I_TYPE(String label, String inst, Integer ra, Integer rb, T imm, Position start, Position end) {
-        super(label, start, end);
+    public I_TYPE(String label, String inst, Integer ra, Integer rb, T imm, Position start) {
+        super(label, start);
         this.inst = inst;
         this.ra = ra;
         this.rb = rb;

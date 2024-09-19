@@ -6,8 +6,8 @@ import Utils.Word;
 public class FILL<T> extends AbInstruction {
     public final T imm;
 
-    public FILL(String label, T imm, Position start, Position end) {
-        super(label, start, end);
+    public FILL(String label, T imm, Position start) {
+        super(label, start);
         this.imm = imm;
     }
 

@@ -9,8 +9,8 @@ public class R_TYPE extends AbInstruction {
     public final Integer rb;
     public final Integer rd;
 
-    public R_TYPE(String label, String inst, Integer ra, Integer rb, Integer rd, Position start, Position end) {
-        super(label, start, end);
+    public R_TYPE(String label, String inst, Integer ra, Integer rb, Integer rd, Position start) {
+        super(label, start);
         this.inst = inst;
         this.ra = ra;
         this.rb = rb;

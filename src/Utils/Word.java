@@ -40,11 +40,7 @@ public class Word extends Bits {
 
     @Override
     public Word clone() {
-        Word word = new Word();
-        for (int i = 0; i < this.length(); i++) {
-            word.set(i, this.get(i));
-        }
-        return word;
+        return (Word) super.clone();
     }
 
     /**
@@ -55,11 +51,7 @@ public class Word extends Bits {
      * @return the new word that is the result of the operation
      */
     public static Word and(Word word1, Word word2) {
-        Word result = new Word();
-        for (int i = 0; i < word1.length(); i++) {
-            result.set(i, word1.get(i) && word2.get(i));
-        }
-        return result;
+        return (Word) Bits.and(word1, word2);
     }
 
     /**
@@ -70,14 +62,6 @@ public class Word extends Bits {
      * @return the sum
      */
     public static Word add(Word word1, Word word2) {
-        Word sum = new Word();
-        boolean carry = false;
-        for (int i = 0; i < word1.length(); i++) {
-            boolean a = word1.get(i);
-            boolean b = word2.get(i);
-            sum.set(i, a ^ b ^ carry);
-            carry = (a && b) || (a && carry) || (b && carry);
-        }
-        return sum;
+        return (Word) Bits.add(word1, word2);
     }
 }

@@ -10,5 +10,4 @@ public class SyntaxError extends Exception {
     public SyntaxError(String message, Position start) {
         super(message + " at " + start.toString());
     }
-
 }

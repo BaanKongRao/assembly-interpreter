@@ -44,6 +44,7 @@ public class I_TYPE<T> extends AbInstruction {
 
     @Override
     public String toString() {
-        return super.toString(String.format("%s, %d, %d, %s", this.inst, this.ra, this.rb, this.offsetOrLabel.toString()));
+        return super.toString(
+                String.format("%s, %d, %d, %s", this.inst, this.ra, this.rb, this.offsetOrLabel.toString()));
     }
 }

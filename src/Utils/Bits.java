@@ -36,14 +36,14 @@ public class Bits extends BitSet {
     }
 
     @Override
-    public BitSet get(int fromIndex, int toIndex) {
+    public Bits get(int fromIndex, int toIndex) {
         if (fromIndex > toIndex) {
             throw new IllegalArgumentException("fromIndex: " + fromIndex + " > toIndex: " + toIndex);
         }
-        if (toIndex > bitsize) {
+        if (toIndex >= bitsize) {
             throw new IndexOutOfBoundsException("toIndex: " + toIndex + " > bitsize: " + bitsize);
         }
-        return super.get(fromIndex, toIndex);
+        return (Bits) super.get(fromIndex, toIndex);
     }
 
     @Override
@@ -67,7 +67,7 @@ public class Bits extends BitSet {
         if (fromIndex > toIndex) {
             throw new IllegalArgumentException("fromIndex: " + fromIndex + " > toIndex: " + toIndex);
         }
-        if (toIndex > bitsize) {
+        if (toIndex >= bitsize) {
             throw new IndexOutOfBoundsException("toIndex: " + toIndex + " > bitsize: " + bitsize);
         }
         super.set(fromIndex, toIndex);
@@ -78,10 +78,66 @@ public class Bits extends BitSet {
         if (fromIndex > toIndex) {
             throw new IllegalArgumentException("fromIndex: " + fromIndex + " > toIndex: " + toIndex);
         }
-        if (toIndex > bitsize) {
+        if (toIndex >= bitsize) {
             throw new IndexOutOfBoundsException("toIndex: " + toIndex + " > bitsize: " + bitsize);
         }
         super.set(fromIndex, toIndex, value);
+    }
+
+    @Override
+    public void clear(int bitIndex) {
+        if (bitIndex >= bitsize) {
+            throw new IndexOutOfBoundsException("bitIndex: " + bitIndex + " >= bitsize: " + bitsize);
+        }
+        super.clear(bitIndex);
+    }
+
+    @Override
+    public void clear(int fromIndex, int toIndex) {
+        if (fromIndex > toIndex) {
+            throw new IllegalArgumentException("fromIndex: " + fromIndex + " > toIndex: " + toIndex);
+        }
+        if (toIndex >= bitsize) {
+            throw new IndexOutOfBoundsException("toIndex: " + toIndex + " > bitsize: " + bitsize);
+        }
+        super.clear(fromIndex, toIndex);
+    }
+
+    @Override
+    public void flip(int bitIndex) {
+        if (bitIndex >= bitsize) {
+            throw new IndexOutOfBoundsException("bitIndex: " + bitIndex + " >= bitsize: " + bitsize);
+        }
+        super.flip(bitIndex);
+    }
+
+    @Override
+    public void flip(int fromIndex, int toIndex) {
+        if (fromIndex > toIndex) {
+            throw new IllegalArgumentException("fromIndex: " + fromIndex + " > toIndex: " + toIndex);
+        }
+        if (toIndex >= bitsize) {
+            throw new IndexOutOfBoundsException("toIndex: " + toIndex + " > bitsize: " + bitsize);
+        }
+        super.flip(fromIndex, toIndex);
+    }
+
+    @Override
+    public int nextSetBit(int fromIndex) {
+        if (fromIndex >= bitsize) {
+            throw new IndexOutOfBoundsException("fromIndex: " + fromIndex + " >= bitsize: " + bitsize);
+        }
+        int i = super.nextSetBit(fromIndex);
+        return i >= bitsize ? -1 : i;
+    }
+
+    @Override
+    public int nextClearBit(int fromIndex) {
+        if (fromIndex >= bitsize) {
+            throw new IndexOutOfBoundsException("fromIndex: " + fromIndex + " >= bitsize: " + bitsize);
+        }
+        int i = super.nextClearBit(fromIndex);
+        return i >= bitsize ? -1 : i;
     }
 
     @Override
@@ -130,60 +186,17 @@ public class Bits extends BitSet {
         }
     }
 
-    @Override
-    public void clear(int bitIndex) {
-        if (bitIndex >= bitsize) {
-            throw new IndexOutOfBoundsException("bitIndex: " + bitIndex + " >= bitsize: " + bitsize);
+    /**
+     * Converts the bits to an int.
+     * 
+     * @return the int value
+     */
+    public int toInt() {
+        int n = 0;
+        for (int i = 0; i < this.length(); i++) {
+            n += this.get(i) ? (1 << i) : 0;
         }
-        super.clear(bitIndex);
-    }
-
-    @Override
-    public void clear(int fromIndex, int toIndex) {
-        if (fromIndex > toIndex) {
-            throw new IllegalArgumentException("fromIndex: " + fromIndex + " > toIndex: " + toIndex);
-        }
-        if (toIndex > bitsize) {
-            throw new IndexOutOfBoundsException("toIndex: " + toIndex + " > bitsize: " + bitsize);
-        }
-        super.clear(fromIndex, toIndex);
-    }
-
-    @Override
-    public int nextSetBit(int fromIndex) {
-        if (fromIndex >= bitsize) {
-            throw new IndexOutOfBoundsException("fromIndex: " + fromIndex + " >= bitsize: " + bitsize);
-        }
-        int i = super.nextSetBit(fromIndex);
-        return i >= bitsize ? -1 : i;
-    }
-
-    @Override
-    public int nextClearBit(int fromIndex) {
-        if (fromIndex >= bitsize) {
-            throw new IndexOutOfBoundsException("fromIndex: " + fromIndex + " >= bitsize: " + bitsize);
-        }
-        int i = super.nextClearBit(fromIndex);
-        return i >= bitsize ? -1 : i;
-    }
-
-    @Override
-    public void flip(int bitIndex) {
-        if (bitIndex >= bitsize) {
-            throw new IndexOutOfBoundsException("bitIndex: " + bitIndex + " >= bitsize: " + bitsize);
-        }
-        super.flip(bitIndex);
-    }
-
-    @Override
-    public void flip(int fromIndex, int toIndex) {
-        if (fromIndex > toIndex) {
-            throw new IllegalArgumentException("fromIndex: " + fromIndex + " > toIndex: " + toIndex);
-        }
-        if (toIndex > bitsize) {
-            throw new IndexOutOfBoundsException("toIndex: " + toIndex + " > bitsize: " + bitsize);
-        }
-        super.flip(fromIndex, toIndex);
+        return n;
     }
 
     /**
@@ -229,6 +242,20 @@ public class Bits extends BitSet {
         }
         sb.insert(0, "0x");
         return sb.toString();
+    }
+
+    /**
+     * Converts the int to a Bits object.
+     * 
+     * @param i the int value
+     * @return the Bits object
+     */
+    public static Bits fromInt(int i) {
+        Bits bits = new Bits();
+        for (int j = 0; j < Integer.SIZE; j++) {
+            bits.set(j, (i & (1 << j)) != 0);
+        }
+        return bits;
     }
 
     /**

@@ -19,6 +19,10 @@ public record Position(String filename, int line, int column) {
         }
     }
 
+    public int line() {
+        return line;
+    }
+
     @Override
     public String toString() {
         return (filename != null ? filename + ":" : "") + line + ":" + column;

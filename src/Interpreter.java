@@ -1,5 +1,3 @@
-import java.io.IOException;
-
 import Utils.IntegerOverflowException;
 import Utils.SyntaxError;
 import Utils.Word;
@@ -27,12 +25,7 @@ public class Interpreter extends AbAssembler {
             memory[i] = new Word();
         }
 
-        try {
-            readFile(filename);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return;
-        }
+        readFile(filename);
 
         while (pc < instructions.length) {
             pc = instructions[pc].execute(registers, memory, pc);

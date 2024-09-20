@@ -1,5 +1,7 @@
 package Instruction;
 
+import java.util.Optional;
+
 import Utils.Position;
 
 /**
@@ -30,7 +32,7 @@ public abstract class AbInstruction implements Instruction {
 
     public String toString(String args) {
         return this.getClass().getSimpleName() + "(" + args + ")"
-                + (this.label == null ? "" : " with label:" + this.label) + " at "
-                + (this.labelStart == null ? this.instStart.toString() : this.labelStart.toString());
+                + Optional.ofNullable(this.label).map(l -> " with label:" + l).orElse("") + " at "
+                + Optional.ofNullable(this.labelStart).map(Position::toString).orElse(this.instStart.toString());
     }
 }

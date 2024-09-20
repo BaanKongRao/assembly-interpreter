@@ -1,5 +1,7 @@
 package Instruction;
 
+import java.util.Map;
+
 import Utils.IntegerOverflowException;
 import Utils.SyntaxError;
 import Utils.Word;
@@ -10,7 +12,7 @@ import Utils.Word;
  * @see Instruction.AbInstruction
  */
 public interface Instruction {
-    public void errorCheck() throws SyntaxError, IntegerOverflowException;
+    public void errorCheck(Map<String, Integer> labelsMap) throws SyntaxError, IntegerOverflowException;
 
     public Word toBinary();
 

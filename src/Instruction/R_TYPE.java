@@ -1,5 +1,7 @@
 package Instruction;
 
+import java.util.Map;
+
 import Utils.Position;
 import Utils.Word;
 
@@ -23,7 +25,7 @@ public class R_TYPE extends AbInstruction {
     }
 
     @Override
-    public void errorCheck() {
+    public void errorCheck(Map<String, Integer> labelsMap) {
         // TODO Implement this
         throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
     }
@@ -42,6 +44,6 @@ public class R_TYPE extends AbInstruction {
 
     @Override
     public String toString() {
-        return super.toString(this.inst + ", " + this.ra + ", " + this.rb + ", " + this.rd);
+        return super.toString(String.format("%s, %d, %d, %d", this.inst, this.ra, this.rb, this.rd));
     }
 }

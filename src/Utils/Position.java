@@ -9,18 +9,21 @@ package Utils;
  * @param line     the line number
  * @param column   the column number
  */
-public record Position(String filename, int line, int column) {
-    public Position {
+public class Position {
+    public final String filename;
+    public final int line;
+    public final int column;
+
+    public Position(String filename, int line, int column) {
         if (line < 1) {
             throw new IllegalArgumentException("Line number must be greater than 0");
         }
         if (column < 1) {
             throw new IllegalArgumentException("Column number must be greater than 0");
         }
-    }
-
-    public int line() {
-        return line;
+        this.filename = filename;
+        this.line = line;
+        this.column = column;
     }
 
     @Override

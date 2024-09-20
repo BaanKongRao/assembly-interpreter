@@ -13,6 +13,7 @@ public class Tester {
         // testBits();
         // testLexer();
         // testParser();
+        // testAssembler();
     }
 
     public static void testBits() {
@@ -103,6 +104,17 @@ public class Tester {
         }
         for (Instruction instruction : instructions) {
             System.out.println(instruction);
+        }
+    }
+
+    public static void testAssembler() {
+        String inFilePath = "src/tester1.fasm";
+        String outFilePath = "src/tester1.fbin";
+        try {
+            Assembler.assemble(inFilePath, outFilePath);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
         }
     }
 }

@@ -6,6 +6,8 @@ import java.util.Map;
 
 import Instruction.AbInstruction;
 import Instruction.Instruction;
+import Instruction.FILL;
+import Instruction.I_TYPE;
 import Utils.IntegerOverflowException;
 import Utils.Position;
 import Utils.SyntaxError;
@@ -27,11 +29,41 @@ public abstract class AbAssembler {
             e.printStackTrace();
             return;
         }
+
         instructions = Parser.parse(Lexer.lex(sb.toString())).toArray(new Instruction[0]);
 
         Map<String, Integer> labelsMap = resolveLabels();
+        for (int i = 0; i < instructions.length; i++) {
+            switch (instructions[i]) {
+                case FILL<?> fill -> {
+                    switch (fill.numberOrLabel) {
+                        case String s -> {
+                            if (labelsMap.containsKey(s)) {
+                                instructions[i] = new FILL<Integer>(fill.label, fill.labelStart, fill.instStart, labelsMap.get(s), fill.numberOrLabelStart);
+                            } else {
+                                throw new SyntaxError("Label " + s + " is not defined", fill.numberOrLabelStart);
+                            }
+                        }
+                        default -> {}
+                    }
+                }
+                case I_TYPE<?> iType -> {
+                    switch (iType.offsetOrLabel) {
+                        case String s -> {
+                            if (labelsMap.containsKey(s)) {
+                                instructions[i] = new I_TYPE<Integer>(iType.label, iType.labelStart, iType.inst, iType.instStart, iType.ra, iType.raStart, iType.rb, iType.rbStart, labelsMap.get(s), iType.offsetOrLabelStart);
+                            } else {
+                                throw new SyntaxError("Label " + s + " is not defined", iType.offsetOrLabelStart);
+                            }
+                        }
+                        default -> {}
+                    }
+                }
+                default -> {}
+            }
+        }
         for (Instruction instruction : instructions) {
-            instruction.errorCheck(labelsMap);
+            instruction.errorCheck();
         }
     }
 

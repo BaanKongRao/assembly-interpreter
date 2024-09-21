@@ -44,7 +44,7 @@ public class Word extends Bits {
      * @return the new word
      */
     public static Word fromInt(int i) {
-        return (Word) fromInt(i);
+        return (Word) Bits.fromInt(i);
     }
     
     /**
@@ -53,7 +53,7 @@ public class Word extends Bits {
      * @return the new word
      */
     public static Word fromLong(long l) {
-        return (Word) fromLong(l);
+        return (Word) Bits.fromLong(l);
     }
 
     @Override

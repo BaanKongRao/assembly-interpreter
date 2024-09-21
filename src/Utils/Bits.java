@@ -340,27 +340,23 @@ public class Bits extends BitSet {
     }
 
     /**
-     * Adds two bits objects and return new bits object. The bits objects must have
-     * the same size.
+     * Adds two bits objects and return new bits object.
      * 
      * @param a the first bits object
      * @param b the second bits object
-     * @return the new bits object that is the sum of the two bits objects
-     * @throws IllegalArgumentException if the bits objects have different sizes
+     * @return the new bits object that is the sum of the two bits objects and have size of the bigger bits object
      */
     public static Bits add(Bits a, Bits b) {
-        if (a.size() != b.size()) {
-            throw new IllegalArgumentException("a.size(): " + a.size() + " != b.size(): " + b.size());
-        }
-        Bits sum = new Bits(a.size());
+        Bits sum = new Bits(Math.max(a.size(), b.size()));
         boolean carry = false;
-        for (int i = 0; i < a.length(); i++) {
+        for (int i = 0; i < sum.size(); i++) {
             boolean bitA = a.get(i);
             boolean bitB = b.get(i);
             boolean bitSum = bitA ^ bitB ^ carry;
             carry = (bitA && bitB) || (bitA && carry) || (bitB && carry);
             sum.set(i, bitSum);
         }
+        if (carry) throw new RuntimeException("Integer overflow");
         return sum;
     }
 }

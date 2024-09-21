@@ -35,8 +35,7 @@ public class R_TYPE extends AbInstruction {
     }
 
     @Override
-    public int execute(Word[] registers, Word[] memory, int pc) { // TODO: add throws overflow exception
-        // TODO Implement this
+    public int execute(Word[] registers, Word[] memory, int pc) {
         if(inst.equals("add")) registers[rd] = Word.add(registers[ra], registers[rb]); // "and" function
         else if(inst.equals("nand")){ // "nand" function
             Word result = Word.and(registers[ra],registers[rb]);

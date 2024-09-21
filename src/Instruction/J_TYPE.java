@@ -1,6 +1,7 @@
 package Instruction;
 
 import Utils.Position;
+import Utils.SyntaxError;
 import Utils.Word;
 
 public class J_TYPE extends AbInstruction {
@@ -19,9 +20,9 @@ public class J_TYPE extends AbInstruction {
     }
 
     @Override
-    public void errorCheck() {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
+    public void errorCheck() throws SyntaxError {
+        if (ra < 0 || ra > 7) throw new SyntaxError("Invalid register. Valid register range is 0 to 7.", raStart);
+        if (rb < 0 || rb > 7) throw new SyntaxError("Invalid register. Valid register range is 0 to 7.", rbStart);
     }
 
     @Override

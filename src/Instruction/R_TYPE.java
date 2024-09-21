@@ -37,9 +37,15 @@ public class R_TYPE extends AbInstruction {
     }
 
     @Override
-    public int execute(Word[] registers, Word[] memory, int pc) {
+    public int execute(Word[] registers, Word[] memory, int pc) { // TODO: add throws overflow exception
         // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'execute'");
+        if(inst.equals("add")) registers[rd] = Word.add(registers[ra], registers[rb]); // "and" function
+        else if(inst.equals("nand")){ // "nand" function
+            Word result = Word.and(registers[ra],registers[rb]);
+            result.flip(0,31);
+            registers[rd] = result;
+        }
+        return pc + 1;
     }
 
     @Override

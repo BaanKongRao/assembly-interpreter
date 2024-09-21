@@ -38,6 +38,24 @@ public class Word extends Bits {
         return sb.toString();
     }
 
+    /**
+     * Creates a new word from a integer.
+     * @param i the integer
+     * @return the new word
+     */
+    public static Word fromInt(int i) {
+        return (Word) fromInt(i);
+    }
+    
+    /**
+     * Creates a new word from a long.
+     * @param l the long
+     * @return the new word
+     */
+    public static Word fromLong(long l) {
+        return (Word) fromLong(l);
+    }
+
     @Override
     public Word clone() {
         return (Word) super.clone();

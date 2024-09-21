@@ -48,7 +48,7 @@ public abstract class AbAssembler {
         }
         Map<String, Integer> labelsMap = new HashMap<>();
         labelsPosMap.forEach((label, pos) -> {
-            labelsMap.put(label, pos.line);
+            labelsMap.put(label, pos.line - 1);
         });
         return labelsMap;
     }

@@ -28,7 +28,7 @@ public class FILL<T> extends AbInstruction {
     @Override
     public int execute(Word[] registers, Word[] memory, int pc) {
         // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'execute'");
+        return pc + 1;
     }
 
     @Override

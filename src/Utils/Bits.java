@@ -3,7 +3,7 @@ package Utils;
 import java.util.BitSet;
 
 public class Bits extends BitSet {
-    protected static int bitsize = 1 << 6;
+    protected int bitsize = 1 << 6;
 
     /**
      * Creates a new bit set of size 64.
@@ -255,6 +255,7 @@ public class Bits extends BitSet {
         for (int j = 0; j < Integer.SIZE; j++) {
             bits.set(j, (i & (1 << j)) != 0);
         }
+        if (bits.length() > bits.bitsize) throw new RuntimeException("the integer is too big to fit in the bits object");
         return bits;
     }
 
@@ -269,6 +270,7 @@ public class Bits extends BitSet {
         for (int i = 0; i < Long.SIZE; i++) {
             bits.set(i, (l & (1 << i)) != 0);
         }
+        if (bits.length() > bits.bitsize) throw new RuntimeException("the long is too big to fit in the bits object");
         return bits;
     }
 
@@ -346,7 +348,7 @@ public class Bits extends BitSet {
      * @param b the second bits object
      * @return the new bits object that is the sum of the two bits objects and have size of the bigger bits object
      */
-    public static Bits add(Bits a, Bits b) {
+    public static Bits add(Bits a, Bits b) throws IllegalArgumentException {
         Bits sum = new Bits(Math.max(a.size(), b.size()));
         boolean carry = false;
         for (int i = 0; i < sum.size(); i++) {
@@ -356,7 +358,7 @@ public class Bits extends BitSet {
             carry = (bitA && bitB) || (bitA && carry) || (bitB && carry);
             sum.set(i, bitSum);
         }
-        if (carry) throw new RuntimeException("Integer overflow");
+        if (carry) throw new IllegalArgumentException("the sum is too big to fit in the bits object");
         return sum;
     }
 }

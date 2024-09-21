@@ -33,7 +33,7 @@ public class J_TYPE extends AbInstruction {
     @Override
     public int execute(Word[] registers, Word[] memory, int pc) {
         // TODO Implement this
-        // registers[rb] = Word.fromInt(pc + 1);
+        registers[rb] = Word.fromInt(pc + 1);
         return registers[ra].toInt();
     }
 

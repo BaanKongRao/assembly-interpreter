@@ -1,6 +1,9 @@
 package Instruction;
 
+import Utils.Bits;
+import Utils.IntegerOverflowException;
 import Utils.Position;
+import Utils.SyntaxError;
 import Utils.Word;
 
 public class I_TYPE<T> extends AbInstruction {
@@ -23,9 +26,13 @@ public class I_TYPE<T> extends AbInstruction {
     }
 
     @Override
-    public void errorCheck() {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
+    public void errorCheck() throws SyntaxError, IntegerOverflowException {
+        if (ra < 0 || ra > 7) throw new SyntaxError("Invalid register. Valid register range is 0 to 7.", raStart);
+        if (rb < 0 || rb > 7) throw new SyntaxError("Invalid register. Valid register range is 0 to 7.", rbStart);
+
+        Integer offset = (Integer) offsetOrLabel;
+        Bits offsetBits = Bits.fromInt(offset);
+        if (offsetBits.length() > 16) throw new IntegerOverflowException("Invalid offset. Valid offset range is -32768 to 32767.", offsetOrLabelStart);
     }
 
     @Override

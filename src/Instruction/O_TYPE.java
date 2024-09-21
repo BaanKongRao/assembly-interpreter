@@ -9,10 +9,7 @@ public class O_TYPE extends AbInstruction {
     }
 
     @Override
-    public void errorCheck() {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
-    }
+    public void errorCheck() {}
 
     @Override
     public Word toBinary() {

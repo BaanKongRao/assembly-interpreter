@@ -24,7 +24,6 @@ public class O_TYPE extends AbInstruction {
 
     @Override
     public int execute(Word[] registers, Word[] memory, int pc) {
-        // TODO Implement this
         if(inst.equals("halt")) return Integer.MAX_VALUE;
         return pc + 1;
     }

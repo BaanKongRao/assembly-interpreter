@@ -38,8 +38,11 @@ public class I_TYPE<T> extends AbInstruction {
 
     @Override
     public int execute(Word[] registers, Word[] memory, int pc) {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'execute'");
+        Integer offset = (Integer)offsetOrLabel;
+        if(inst.equals("lw")) registers[rb] = memory[Word.add(registers[ra], Word.fromInt(offset)).toInt()].clone(); // "lw" function
+        else if(inst.equals("sw")) memory[Word.add(registers[ra], Word.fromInt(offset)).toInt()] = registers[rb].clone(); // "sw" function
+        else if(inst.equals("beq"))if(registers[rb].equals(registers[ra])) return pc + offset; // "beq" funtions
+        return pc + 1;
     }
 
     @Override

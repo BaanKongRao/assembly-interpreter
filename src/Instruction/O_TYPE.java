@@ -13,13 +13,18 @@ public class O_TYPE extends AbInstruction {
     @Override
     public void errorCheck(Map<String, Integer> labelsMap) {
         // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
+        //throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
     }
 
     @Override
     public Word toBinary() {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'toBinary'");
+        Word OWord = new Word(); 
+        //if inst = halt, use opcode = 110
+        OWord.set(23, true);
+        OWord.set(24, true);
+        //if inst = noop, use opcode = 111
+        if(inst.equals("noop")) OWord.set(22, true);
+        return OWord;
     }
 
     @Override

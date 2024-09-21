@@ -23,13 +23,17 @@ public class J_TYPE extends AbInstruction {
     @Override
     public void errorCheck(Map<String, Integer> labelsMap) {
         // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
+        //throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
     }
 
     @Override
     public Word toBinary() {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'toBinary'");
+        Word JWord = new Word();
+        JWord.set(22); //set jalr opcode into instruction with 101
+        JWord.set(24);
+        JWord.regToWord(ra,21); //put binary bits of regA into instruction
+        JWord.regToWord(rb,18); //put binary bits of regB into instruction
+        return JWord;
     }
 
     @Override

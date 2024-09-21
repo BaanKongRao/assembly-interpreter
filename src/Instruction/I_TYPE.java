@@ -27,13 +27,35 @@ public class I_TYPE<T> extends AbInstruction {
     @Override
     public void errorCheck(Map<String, Integer> labelsMap) {
         // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
+        //throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
     }
 
     @Override
     public Word toBinary() {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'toBinary'");
+        Word IWord = new Word();
+        IWord.regToWord(ra, 21);
+        IWord.regToWord(rb, 18);
+        if(inst.equals("lw") || inst.equals("sw")){ 
+            IWord.set(23);
+            Integer labelAddress = 0;
+            if (offsetOrLabel instanceof Integer) {
+                labelAddress = (Integer) offsetOrLabel;
+            } else if (offsetOrLabel instanceof String) {
+                labelAddress = offsetOrLabelStart.line;
+            }
+            IWord.offsetToWord(labelAddress);
+            if(inst.equals("sw")) IWord.set(22);
+        }else if(inst.equals("beq")){
+            IWord.set(24);
+            Integer labelAddress = 0;
+            if (offsetOrLabel instanceof Integer) {
+                labelAddress = (Integer) offsetOrLabel;
+            } else if (offsetOrLabel instanceof String) {
+                labelAddress = offsetOrLabelStart.line - labelStart.line;
+            }
+            IWord.offsetToWord(labelAddress);
+        }
+        return IWord;
     }
 
     @Override

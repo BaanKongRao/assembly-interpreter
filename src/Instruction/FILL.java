@@ -18,13 +18,20 @@ public class FILL<T> extends AbInstruction {
     @Override
     public void errorCheck(Map<String, Integer> labelsMap) {
         // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
+        //throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
     }
 
     @Override
     public Word toBinary() {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'toBinary'");
+        Word fillWord = new Word();
+        Integer realValue = 0;
+        if (numberOrLabel instanceof Integer) {
+            realValue = (Integer) numberOrLabel;
+        } else if (numberOrLabel instanceof String) {
+            realValue = numberOrLabelStart.line;
+        }
+        fillWord.offsetToWord(realValue);
+        return fillWord;
     }
 
     @Override

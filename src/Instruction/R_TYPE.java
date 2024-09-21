@@ -27,13 +27,17 @@ public class R_TYPE extends AbInstruction {
     @Override
     public void errorCheck(Map<String, Integer> labelsMap) {
         // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
+        //throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
     }
 
     @Override
     public Word toBinary() {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'toBinary'");
+        Word RWord = new Word();
+        if(inst.equals("nand")) RWord.set(22); //set nand opcode into instruction with 001 
+        RWord.regToWord(ra, 21); //put binary bits of regA into instruction
+        RWord.regToWord(rb, 18); //put binary bits of regB into instruction
+        RWord.regToWord(rd, 2); //put binary bits of rd into instruction
+        return RWord; 
     }
 
     @Override

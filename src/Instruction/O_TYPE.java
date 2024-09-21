@@ -25,7 +25,8 @@ public class O_TYPE extends AbInstruction {
     @Override
     public int execute(Word[] registers, Word[] memory, int pc) {
         // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'execute'");
+        if(inst.equals("halt")) return Integer.MAX_VALUE;
+        return pc + 1;
     }
 
     @Override

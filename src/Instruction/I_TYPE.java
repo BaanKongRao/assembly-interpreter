@@ -37,23 +37,11 @@ public class I_TYPE<T> extends AbInstruction {
         IWord.regToWord(rb, 18);
         if(inst.equals("lw") || inst.equals("sw")){ 
             IWord.set(23);
-            Integer labelAddress = 0;
-            if (offsetOrLabel instanceof Integer) {
-                labelAddress = (Integer) offsetOrLabel;
-            } else if (offsetOrLabel instanceof String) {
-                labelAddress = offsetOrLabelStart.line;
-            }
-            IWord.offsetToWord(labelAddress);
+            IWord.offsetToWord((Integer) offsetOrLabel);
             if(inst.equals("sw")) IWord.set(22);
         }else if(inst.equals("beq")){
             IWord.set(24);
-            Integer labelAddress = 0;
-            if (offsetOrLabel instanceof Integer) {
-                labelAddress = (Integer) offsetOrLabel;
-            } else if (offsetOrLabel instanceof String) {
-                labelAddress = offsetOrLabelStart.line - labelStart.line;
-            }
-            IWord.offsetToWord(labelAddress);
+            IWord.offsetToWord((Integer)offsetOrLabel);
         }
         return IWord;
     }

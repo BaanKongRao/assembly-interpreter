@@ -24,13 +24,7 @@ public class FILL<T> extends AbInstruction {
     @Override
     public Word toBinary() {
         Word fillWord = new Word();
-        Integer realValue = 0;
-        if (numberOrLabel instanceof Integer) {
-            realValue = (Integer) numberOrLabel;
-        } else if (numberOrLabel instanceof String) {
-            realValue = numberOrLabelStart.line;
-        }
-        fillWord.offsetToWord(realValue);
+        fillWord.offsetToWord((Integer) numberOrLabel);
         return fillWord;
     }
 

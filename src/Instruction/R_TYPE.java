@@ -59,8 +59,9 @@ public class R_TYPE extends AbInstruction {
 
     @Override
     public int execute(Word[] registers, Word[] memory, int pc) {
-        if(inst.equals("add")) registers[rd] = Word.add(registers[ra], registers[rb]);
-        else if(inst.equals("nand")){
+        if(inst.equals("add")) {
+            registers[rd] = Word.add(registers[ra], registers[rb]);
+        } else if(inst.equals("nand")) {
             Word result = Word.and(registers[ra],registers[rb]);
             result.flip(0,31);
             registers[rd] = result;

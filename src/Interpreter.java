@@ -24,6 +24,7 @@ public class Interpreter extends AbAssembler {
         for (int i = 0; i < MEMORY_SIZE; i++) {
             memory[i] = new Word();
         }
+        pc = 0;
 
         readFile(filename);
 

@@ -54,5 +54,4 @@ public class J_TYPE extends AbInstruction {
     public String toString() {
         return super.toString(String.format("%s, %d, %d", this.inst, this.ra, this.rb));
     }
-
 }

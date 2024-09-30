@@ -188,6 +188,7 @@ public class Bits extends BitSet {
 
     /**
      * Converts the bits to an int.
+     * can handle negative numbers(2's complement).
      * 
      * @return the int value
      */
@@ -246,12 +247,13 @@ public class Bits extends BitSet {
 
     /**
      * Converts the int to a Bits object.
+     * can handle negative numbers(2's complement).
      * 
      * @param i the int value
      * @return the Bits object
      */
     public static Bits fromInt(int i) {
-        Bits bits = new Bits();
+        Bits bits = new Bits(Integer.SIZE);
         for (int j = 0; j < Integer.SIZE; j++) {
             bits.set(j, (i & (1 << j)) != 0);
         }
@@ -266,7 +268,7 @@ public class Bits extends BitSet {
      * @return the Bits object
      */
     public static Bits fromLong(long l) {
-        Bits bits = new Bits();
+        Bits bits = new Bits(Long.SIZE);
         for (int i = 0; i < Long.SIZE; i++) {
             bits.set(i, (l & (1 << i)) != 0);
         }
@@ -301,27 +303,7 @@ public class Bits extends BitSet {
 
     @Override
     public Bits clone() {
-        Bits bits = new Bits(bitsize);
-        for (int i = 0; i < this.length(); i++) {
-            bits.set(i, this.get(i));
-        }
-        return bits;
-    }
-
-    public Bits clone(int nbits) {
-        Bits bits = new Bits(nbits);
-        for (int i = 0; i < this.length(); i++) {
-            bits.set(i, this.get(i));
-        }
-        return bits;
-    }
-
-    public Bits clone(Bits bits) {
-        Bits newBits = new Bits(bits.size());
-        for (int i = 0; i < bits.length(); i++) {
-            newBits.set(i, bits.get(i));
-        }
-        return newBits;
+        return (Bits) super.clone();
     }
 
     /**
@@ -336,8 +318,7 @@ public class Bits extends BitSet {
             throw new IllegalArgumentException("a.size(): " + a.size() + " != b.size(): " + b.size());
         }
         Bits and = new Bits(a.size());
-        and.clone(a);
-        and.and(b);
+        and.and(a);
         return and;
     }
 

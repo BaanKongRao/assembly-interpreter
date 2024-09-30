@@ -45,7 +45,7 @@ public class Tester {
         System.out.println(xor);
         System.out.println("--------------~Word1--------------");
         Word not1 = word1.clone();
-        not1.flip(0, 32);
+        not1.flip(0, 31);
         System.out.println(not1);
         System.out.println("--------------Word1 + Word2--------------");
         Word add = Word.add(word1, word2);
@@ -53,6 +53,8 @@ public class Tester {
         System.out.println(add.toHexString());
         System.out.println(add.toLong());
         System.out.println("-------------------------------------------");
+        Word neg = Word.fromInt(-1);
+        System.out.println(neg.toInt());
     }
 
     public static void testLexer() {

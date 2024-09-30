@@ -44,7 +44,12 @@ public class Word extends Bits {
      * @return the new word
      */
     public static Word fromInt(int i) {
-        return (Word) Bits.fromInt(i);
+        // return (Word) Bits.fromInt(i);
+        Word word = new Word();
+        for (int j = 0; j < word.bitsize; j++) {
+            word.set(j, (i & (1 << j)) != 0);
+        }
+        return word;
     }
     
     /**
@@ -53,7 +58,12 @@ public class Word extends Bits {
      * @return the new word
      */
     public static Word fromLong(long l) {
-        return (Word) Bits.fromLong(l);
+        // return (Word) Bits.fromLong(l);
+        Word word = new Word();
+        for (int j = 0; j < word.bitsize; j++) {
+            word.set(j, (l & (1L << j)) != 0);
+        }
+        return word;
     }
 
     @Override
@@ -69,7 +79,9 @@ public class Word extends Bits {
      * @return the new word that is the result of the operation
      */
     public static Word and(Word word1, Word word2) {
-        return (Word) Bits.and(word1, word2);
+        Word result = word1.clone();
+        result.and(word2);
+        return result;
     }
 
     /**
@@ -80,6 +92,8 @@ public class Word extends Bits {
      * @return the sum
      */
     public static Word add(Word word1, Word word2) {
-        return (Word) Bits.add(word1, word2);
+        Word result = word1.clone();
+        result.add(word2);
+        return result;
     }
 }

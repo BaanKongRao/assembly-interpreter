@@ -110,8 +110,19 @@ public class Tester {
     }
 
     public static void testAssembler() {
-        String inFilePath = "src/tester1.fasm";
-        String outFilePath = "src/tester1.fbin";
+        // test 1
+        String inFilePath = "src/tester.fasm";
+        String outFilePath = "src/tester.fbin";
+        try {
+            Assembler.assemble(inFilePath, outFilePath);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
+        
+        // test 2
+        inFilePath = "src/tester1.fasm";
+        outFilePath = "src/tester1.fbin";
         try {
             Assembler.assemble(inFilePath, outFilePath);
         } catch (Exception e) {

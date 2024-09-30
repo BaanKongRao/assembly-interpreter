@@ -26,7 +26,7 @@ public class Assembler extends AbAssembler {
     private static void writeFile(String filename) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filename))) {
             for (Instruction instruction : instructions) {
-                bw.write(instruction.toBinaryString());
+                bw.write(instruction.toBinaryString().replace("0b", ""));
                 bw.newLine();
             }
         } catch (IOException e) {

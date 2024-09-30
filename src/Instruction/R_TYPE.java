@@ -1,5 +1,6 @@
 package Instruction;
 
+import Utils.Bits;
 import Utils.Position;
 import Utils.SyntaxError;
 import Utils.Word;
@@ -32,8 +33,28 @@ public class R_TYPE extends AbInstruction {
 
     @Override
     public Word toBinary() {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'toBinary'");
+        Bits instBits = null;
+        Bits raBits = Bits.fromInt(ra);
+        Bits rbBits = Bits.fromInt(rb);
+        Bits rdBits = Bits.fromInt(rd);
+        switch (inst) {
+            case "add" -> instBits = Bits.fromInt(0b000);
+            case "nand" -> instBits = Bits.fromInt(0b001);
+        }
+        Word word = new Word();
+        for (int i = 0; i < 3; i++) {
+            word.set(i, rdBits.get(i));
+        }
+        for (int i = 16; i < 19; i++) {
+            word.set(i, rbBits.get(i - 16));
+        }
+        for (int i = 19; i < 22; i++) {
+            word.set(i, raBits.get(i - 19));
+        }
+        for (int i = 22; i < 25; i++) {
+            word.set(i, instBits.get(i - 22));
+        }
+        return word;
     }
 
     @Override

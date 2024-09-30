@@ -37,8 +37,29 @@ public class I_TYPE<T> extends AbInstruction {
 
     @Override
     public Word toBinary() {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'toBinary'");
+        Bits instBits = null;
+        Bits raBits = Bits.fromInt(ra);
+        Bits rbBits = Bits.fromInt(rb);
+        Bits offsetBits = Bits.fromInt((Integer) offsetOrLabel);
+        switch (inst) {
+            case "lw" -> instBits = Bits.fromInt(0b010);
+            case "sw" -> instBits = Bits.fromInt(0b011);
+            case "beq" -> instBits = Bits.fromInt(0b100);
+        }
+        Word word = new Word();
+        for (int i = 0; i < 16; i++) {
+            word.set(i, offsetBits.get(i));
+        }
+        for (int i = 16; i < 19; i++) {
+            word.set(i, raBits.get(i - 16));
+        }
+        for (int i = 19; i < 22; i++) {
+            word.set(i, rbBits.get(i - 19));
+        }
+        for (int i = 22; i < 25; i++) {
+            word.set(i, instBits.get(i - 22));
+        }
+        return word;
     }
 
     @Override

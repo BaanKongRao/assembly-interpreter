@@ -26,8 +26,7 @@ public class FILL<T> extends AbInstruction {
 
     @Override
     public Word toBinary() {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'toBinary'");
+        return Word.fromInt((Integer) numberOrLabel);
     }
 
     @Override

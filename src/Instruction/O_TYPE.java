@@ -1,5 +1,6 @@
 package Instruction;
 
+import Utils.Bits;
 import Utils.Position;
 import Utils.Word;
 
@@ -13,8 +14,16 @@ public class O_TYPE extends AbInstruction {
 
     @Override
     public Word toBinary() {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'toBinary'");
+        Bits instBits = null;
+        switch (inst) {
+            case "halt" -> instBits = Bits.fromInt(0b110);
+            case "noop" -> instBits = Bits.fromInt(0b111);
+        }
+        Word word = new Word();
+        for (int i = 22; i < 25; i++) {
+            word.set(i, instBits.get(i - 22));
+        }
+        return word;
     }
 
     @Override

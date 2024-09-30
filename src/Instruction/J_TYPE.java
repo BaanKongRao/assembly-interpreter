@@ -1,5 +1,6 @@
 package Instruction;
 
+import Utils.Bits;
 import Utils.Position;
 import Utils.SyntaxError;
 import Utils.Word;
@@ -27,8 +28,20 @@ public class J_TYPE extends AbInstruction {
 
     @Override
     public Word toBinary() {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'toBinary'");
+        Bits instBits = Bits.fromInt(0b101);
+        Bits raBits = Bits.fromInt(ra);
+        Bits rbBits = Bits.fromInt(rb);
+        Word word = new Word();
+        for (int i = 16; i < 19; i++) {
+            word.set(i, rbBits.get(i - 16));
+        }
+        for (int i = 19; i < 22; i++) {
+            word.set(i, raBits.get(i - 19));
+        }
+        for (int i = 22; i < 25; i++) {
+            word.set(i, instBits.get(i - 22));
+        }
+        return word;
     }
 
     @Override

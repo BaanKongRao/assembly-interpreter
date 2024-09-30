@@ -14,6 +14,7 @@ public class Tester {
         // testLexer();
         // testParser();
         // testAssembler();
+        // testInterpreter();
     }
 
     public static void testBits() {
@@ -53,8 +54,6 @@ public class Tester {
         System.out.println(add.toHexString());
         System.out.println(add.toLong());
         System.out.println("-------------------------------------------");
-        Word neg = Word.fromInt(-1);
-        System.out.println(neg.toInt());
     }
 
     public static void testLexer() {
@@ -125,6 +124,26 @@ public class Tester {
         outFilePath = "src/tester1.fbin";
         try {
             Assembler.assemble(inFilePath, outFilePath);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
+    }
+
+    public static void testInterpreter() {
+        // test 1
+        String inFilePath = "src/tester.fasm";
+        try {
+            Interpreter.interpret(inFilePath);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
+
+        // test 2
+        inFilePath = "src/tester1.fasm";
+        try {
+            Interpreter.interpret(inFilePath);
         } catch (Exception e) {
             e.printStackTrace();
             return;

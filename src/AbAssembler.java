@@ -30,7 +30,7 @@ public abstract class AbAssembler {
             return;
         }
 
-        instructions = Parser.parse(Lexer.lex(sb.toString())).toArray(new Instruction[0]);
+        instructions = Parser.parse(Lexer.lex(sb.toString(), filename)).toArray(new Instruction[0]);
 
         Map<String, Integer> labelsMap = resolveLabels();
         for (int i = 0; i < instructions.length; i++) {

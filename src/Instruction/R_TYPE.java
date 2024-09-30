@@ -59,8 +59,13 @@ public class R_TYPE extends AbInstruction {
 
     @Override
     public int execute(Word[] registers, Word[] memory, int pc) {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'execute'");
+        if(inst.equals("add")) registers[rd] = Word.add(registers[ra], registers[rb]);
+        else if(inst.equals("nand")){
+            Word result = Word.and(registers[ra],registers[rb]);
+            result.flip(0,31);
+            registers[rd] = result;
+        }
+        return pc + 1;
     }
 
     @Override

@@ -1,6 +1,7 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 import Instruction.Instruction;
 import Utils.IntegerOverflowException;
@@ -18,9 +19,13 @@ public class Assembler extends AbAssembler {
      * 
      * @param filename: the name of the file to assemble
      */
-    public static void assemble(String inFilename, String outFilename) throws SyntaxError, IntegerOverflowException {
+    public static void assemble(String inFilename) throws SyntaxError, IntegerOverflowException {
+        Pattern fileNames = Pattern.compile(".*\\.fasm");
+        if (!fileNames.matcher(inFilename).matches()) {
+            throw new Error("Input file must be a .fasm file.");
+        }
         readFile(inFilename);
-        writeFile(outFilename);
+        writeFile(inFilename.replace(".fasm", ".fbin"));
     }
 
     private static void writeFile(String filename) {

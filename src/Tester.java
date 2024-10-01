@@ -10,11 +10,11 @@ import Utils.Word;
 
 public class Tester {
     public static void main(String[] args) {
-        // testBits();
-        // testLexer();
-        // testParser();
-        // testAssembler();
-        // testInterpreter();
+        testBits();
+        testLexer();
+        testParser();
+        testAssembler();
+        testInterpreter();
     }
 
     public static void testBits() {
@@ -111,9 +111,8 @@ public class Tester {
     public static void testAssembler() {
         // test 1
         String inFilePath = "src/tester.fasm";
-        String outFilePath = "src/tester.fbin";
         try {
-            Assembler.assemble(inFilePath, outFilePath);
+            Assembler.assemble(inFilePath);
         } catch (Exception e) {
             e.printStackTrace();
             return;
@@ -121,9 +120,8 @@ public class Tester {
         
         // test 2
         inFilePath = "src/tester1.fasm";
-        outFilePath = "src/tester1.fbin";
         try {
-            Assembler.assemble(inFilePath, outFilePath);
+            Assembler.assemble(inFilePath);
         } catch (Exception e) {
             e.printStackTrace();
             return;

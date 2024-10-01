@@ -65,7 +65,11 @@ public abstract class AbAssembler {
                     switch (iType.offsetOrLabel) {
                         case String s -> {
                             if (labelsMap.containsKey(s)) {
-                                instructions[i] = new I_TYPE<Integer>(iType.label, iType.labelStart, iType.inst, iType.instStart, iType.ra, iType.raStart, iType.rb, iType.rbStart, labelsMap.get(s), iType.offsetOrLabelStart);
+                                if (iType.inst.equals("beq")) {
+                                    instructions[i] = new I_TYPE<Integer>(iType.label, iType.labelStart, iType.inst, iType.instStart, iType.ra, iType.raStart, iType.rb, iType.rbStart, labelsMap.get(s) - (i + 1), iType.offsetOrLabelStart);
+                                } else {
+                                    instructions[i] = new I_TYPE<Integer>(iType.label, iType.labelStart, iType.inst, iType.instStart, iType.ra, iType.raStart, iType.rb, iType.rbStart, labelsMap.get(s), iType.offsetOrLabelStart);
+                                }
                             } else {
                                 throw new SyntaxError("Label " + s + " is not defined", iType.offsetOrLabelStart);
                             }

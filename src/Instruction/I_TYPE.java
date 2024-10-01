@@ -32,7 +32,10 @@ public class I_TYPE<T> extends AbInstruction {
 
         Integer offset = (Integer) offsetOrLabel;
         Bits offsetBits = Bits.fromInt(offset);
-        if (offsetBits.length() > 16) throw new IntegerOverflowException("Invalid offset. Valid offset range is -32768 to 32767.", offsetOrLabelStart);
+        if (offsetBits.length() > 16) {
+            if (offsetBits.get(31)) return;
+            throw new IntegerOverflowException("Invalid offset. Valid offset range is -32768 to 32767.", offsetOrLabelStart);
+        }
     }
 
     @Override
@@ -51,10 +54,10 @@ public class I_TYPE<T> extends AbInstruction {
             word.set(i, offsetBits.get(i));
         }
         for (int i = 16; i < 19; i++) {
-            word.set(i, raBits.get(i - 16));
+            word.set(i, rbBits.get(i - 16));
         }
         for (int i = 19; i < 22; i++) {
-            word.set(i, rbBits.get(i - 19));
+            word.set(i, raBits.get(i - 19));
         }
         for (int i = 22; i < 25; i++) {
             word.set(i, instBits.get(i - 22));
@@ -70,7 +73,7 @@ public class I_TYPE<T> extends AbInstruction {
         } else if(inst.equals("sw")) {
             memory[Word.add(registers[ra], Word.fromInt(offset)).toInt()] = registers[rb].clone();
         } else if(inst.equals("beq")) {
-            if(registers[rb].equals(registers[ra])) return pc + offset;
+            if(registers[rb].equals(registers[ra])) return pc + 1 + offset;
         }
         return pc + 1;
     }

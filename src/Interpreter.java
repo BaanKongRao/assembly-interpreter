@@ -15,6 +15,7 @@ public class Interpreter extends AbAssembler {
     private static final int MEMORY_SIZE = 65536;
     private static Word[] registers = new Word[REGISTER_SIZE];
     private static Word[] memory = new Word[MEMORY_SIZE];
+    private static int pcOld = 0;
     private static int pc = 0;
     private static int instCount = 0;
 
@@ -28,6 +29,7 @@ public class Interpreter extends AbAssembler {
         for (int i = 0; i < MEMORY_SIZE; i++) {
             memory[i] = new Word();
         }
+        pcOld = 0;
         pc = 0;
         instCount = 0;
         
@@ -39,12 +41,13 @@ public class Interpreter extends AbAssembler {
         printMemory();
         while (pc < instructions.length) {
             printState();
+            pcOld = pc;
             pc = instructions[pc].execute(registers, memory, pc);
             registers[0] = new Word();
-            printState();
             instCount++;
         }
         if (pc == Integer.MAX_VALUE) {
+            pc = pcOld + 1;
             System.out.println("Machine halted");
             sb.append("Machine halted\n");
         }
@@ -52,8 +55,8 @@ public class Interpreter extends AbAssembler {
         sb.append("Instructions executed: ").append(instCount).append("\n");
 
         System.out.println("Final memory state:");
-        sb.append("Final memory state:\n");
-        printMemory();
+        sb.append("Final machine state:\n");
+        printState();
 
         writeFile(filename.replace(".fasm", ".out"), sb.toString());
     }
@@ -99,7 +102,5 @@ public class Interpreter extends AbAssembler {
         printRegisters(2);
         System.out.println("end state");
         sb.append("end state\n");
-        System.out.println();
-        sb.append("\n");
     }
 }

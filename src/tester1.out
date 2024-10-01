@@ -1,23 +1,23 @@
-memory[0] = 11010069
-memory[1] = 8912920
-memory[2] = 9437207
+memory[0] = 8716309
+memory[1] = 8454168
+memory[2] = 8519703
 memory[3] = 22282240
-memory[4] = 11010069
-memory[5] = 8912920
-memory[6] = 9437207
+memory[4] = 8716309
+memory[5] = 8454168
+memory[6] = 8519703
 memory[7] = 22282240
 memory[8] = 25165824
-memory[9] = 15138841
+memory[9] = 16515097
 memory[10] = 3997703
-memory[11] = 13565977
+memory[11] = 16318489
 memory[12] = 3997703
 memory[13] = 589825
 memory[14] = 589827
-memory[15] = 9437206
+memory[15] = 8519702
 memory[16] = 3801095
-memory[17] = 9371673
+memory[17] = 12124185
 memory[18] = 3801095
-memory[19] = 10944537
+memory[19] = 12320793
 memory[20] = 23199744
 memory[21] = 1
 memory[22] = -1
@@ -28,26 +28,26 @@ memory[25] = 0
 state:
     pc 0
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -64,31 +64,30 @@ state:
         registers[6] = 0
         registers[7] = 0
 end state
-
 @@@
 state:
     pc 1
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -105,72 +104,30 @@ state:
         registers[6] = 0
         registers[7] = 0
 end state
-
-@@@
-state:
-    pc 1
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 0
-    registers:
-        registers[0] = 0
-        registers[1] = 0
-        registers[2] = 0
-        registers[3] = 0
-        registers[4] = 0
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 0
-end state
-
 @@@
 state:
     pc 2
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -187,72 +144,30 @@ state:
         registers[6] = 0
         registers[7] = 0
 end state
-
-@@@
-state:
-    pc 2
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 0
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = 0
-        registers[3] = 0
-        registers[4] = 0
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 0
-end state
-
 @@@
 state:
     pc 3
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -269,72 +184,30 @@ state:
         registers[6] = 0
         registers[7] = 0
 end state
-
-@@@
-state:
-    pc 3
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 0
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = 9
-        registers[3] = 0
-        registers[4] = 0
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 0
-end state
-
 @@@
 state:
     pc 9
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -351,72 +224,30 @@ state:
         registers[6] = 0
         registers[7] = 0
 end state
-
-@@@
-state:
-    pc 9
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 0
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = 9
-        registers[3] = 0
-        registers[4] = 4
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 0
-end state
-
 @@@
 state:
     pc 10
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -433,72 +264,30 @@ state:
         registers[6] = 0
         registers[7] = 0
 end state
-
-@@@
-state:
-    pc 10
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 4
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = 9
-        registers[3] = 0
-        registers[4] = 4
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 0
-end state
-
 @@@
 state:
     pc 11
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -515,72 +304,30 @@ state:
         registers[6] = 0
         registers[7] = 1
 end state
-
-@@@
-state:
-    pc 11
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 4
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = 9
-        registers[3] = 0
-        registers[4] = 4
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 1
-end state
-
 @@@
 state:
     pc 12
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -598,73 +345,30 @@ state:
         registers[6] = 0
         registers[7] = 1
 end state
-
-@@@
-state:
-    pc 12
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 4
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = 9
-        registers[3] = 0
-        registers[4] = 4
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 1
-end state
-
 @@@
 state:
     pc 13
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -682,73 +386,30 @@ state:
         registers[6] = 0
         registers[7] = 2
 end state
-
-@@@
-state:
-    pc 13
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 4
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = 9
-        registers[3] = 0
-        registers[4] = 4
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 2
-end state
-
 @@@
 state:
     pc 14
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -766,73 +427,30 @@ state:
         registers[6] = 0
         registers[7] = 2
 end state
-
-@@@
-state:
-    pc 14
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 4
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 20
-        registers[2] = 9
-        registers[3] = 0
-        registers[4] = 4
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 2
-end state
-
 @@@
 state:
     pc 15
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -850,73 +468,30 @@ state:
         registers[6] = 0
         registers[7] = 2
 end state
-
-@@@
-state:
-    pc 15
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 4
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 20
-        registers[2] = 9
-        registers[3] = 40
-        registers[4] = 4
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 2
-end state
-
 @@@
 state:
     pc 16
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -934,73 +509,30 @@ state:
         registers[6] = 0
         registers[7] = 2
 end state
-
-@@@
-state:
-    pc 16
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 4
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 20
-        registers[2] = -1
-        registers[3] = 40
-        registers[4] = 4
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 2
-end state
-
 @@@
 state:
     pc 17
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -1018,73 +550,30 @@ state:
         registers[6] = 0
         registers[7] = 1
 end state
-
-@@@
-state:
-    pc 17
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 4
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 20
-        registers[2] = -1
-        registers[3] = 40
-        registers[4] = 4
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 1
-end state
-
 @@@
 state:
     pc 18
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -1102,73 +591,30 @@ state:
         registers[6] = 0
         registers[7] = 1
 end state
-
-@@@
-state:
-    pc 18
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 4
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = -1
-        registers[3] = 40
-        registers[4] = 4
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 1
-end state
-
 @@@
 state:
     pc 19
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -1186,73 +632,30 @@ state:
         registers[6] = 0
         registers[7] = 0
 end state
-
-@@@
-state:
-    pc 19
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 4
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = -1
-        registers[3] = 40
-        registers[4] = 4
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 0
-end state
-
 @@@
 state:
     pc 20
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -1270,73 +673,30 @@ state:
         registers[6] = 0
         registers[7] = 0
 end state
-
-@@@
-state:
-    pc 20
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 4
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = -1
-        registers[3] = 40
-        registers[4] = 4
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 0
-end state
-
 @@@
 state:
     pc 4
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -1354,73 +714,30 @@ state:
         registers[6] = 0
         registers[7] = 0
 end state
-
-@@@
-state:
-    pc 4
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 4
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = 21
-        registers[3] = 40
-        registers[4] = 4
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 0
-end state
-
 @@@
 state:
     pc 5
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -1438,73 +755,30 @@ state:
         registers[6] = 0
         registers[7] = 0
 end state
-
-@@@
-state:
-    pc 5
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 4
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = 21
-        registers[3] = 40
-        registers[4] = 4
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 0
-end state
-
 @@@
 state:
     pc 6
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -1522,73 +796,30 @@ state:
         registers[6] = 0
         registers[7] = 0
 end state
-
-@@@
-state:
-    pc 6
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 4
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = 21
-        registers[3] = 40
-        registers[4] = 4
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 0
-end state
-
 @@@
 state:
     pc 7
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -1606,73 +837,30 @@ state:
         registers[6] = 0
         registers[7] = 0
 end state
-
-@@@
-state:
-    pc 7
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 4
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = 9
-        registers[3] = 40
-        registers[4] = 4
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 0
-end state
-
 @@@
 state:
     pc 9
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -1690,73 +878,30 @@ state:
         registers[6] = 0
         registers[7] = 0
 end state
-
-@@@
-state:
-    pc 9
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 4
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = 9
-        registers[3] = 40
-        registers[4] = 8
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 0
-end state
-
 @@@
 state:
     pc 10
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -1774,73 +919,30 @@ state:
         registers[6] = 0
         registers[7] = 0
 end state
-
-@@@
-state:
-    pc 10
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 8
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = 9
-        registers[3] = 40
-        registers[4] = 8
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 0
-end state
-
 @@@
 state:
     pc 11
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -1858,73 +960,30 @@ state:
         registers[6] = 0
         registers[7] = 1
 end state
-
-@@@
-state:
-    pc 11
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 8
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = 9
-        registers[3] = 40
-        registers[4] = 8
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 1
-end state
-
 @@@
 state:
     pc 12
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -1942,73 +1001,30 @@ state:
         registers[6] = 0
         registers[7] = 1
 end state
-
-@@@
-state:
-    pc 12
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 8
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = 9
-        registers[3] = 40
-        registers[4] = 8
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 1
-end state
-
 @@@
 state:
     pc 13
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -2026,73 +1042,30 @@ state:
         registers[6] = 0
         registers[7] = 2
 end state
-
-@@@
-state:
-    pc 13
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 8
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = 9
-        registers[3] = 40
-        registers[4] = 8
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 2
-end state
-
 @@@
 state:
     pc 14
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -2110,73 +1083,30 @@ state:
         registers[6] = 0
         registers[7] = 2
 end state
-
-@@@
-state:
-    pc 14
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 8
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 20
-        registers[2] = 9
-        registers[3] = 40
-        registers[4] = 8
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 2
-end state
-
 @@@
 state:
     pc 15
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -2194,73 +1124,30 @@ state:
         registers[6] = 0
         registers[7] = 2
 end state
-
-@@@
-state:
-    pc 15
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 8
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 20
-        registers[2] = 9
-        registers[3] = 40
-        registers[4] = 8
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 2
-end state
-
 @@@
 state:
     pc 16
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -2278,73 +1165,30 @@ state:
         registers[6] = 0
         registers[7] = 2
 end state
-
-@@@
-state:
-    pc 16
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 8
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 20
-        registers[2] = -1
-        registers[3] = 40
-        registers[4] = 8
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 2
-end state
-
 @@@
 state:
     pc 17
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -2362,73 +1206,30 @@ state:
         registers[6] = 0
         registers[7] = 1
 end state
-
-@@@
-state:
-    pc 17
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 8
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 20
-        registers[2] = -1
-        registers[3] = 40
-        registers[4] = 8
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 1
-end state
-
 @@@
 state:
     pc 18
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -2446,73 +1247,30 @@ state:
         registers[6] = 0
         registers[7] = 1
 end state
-
-@@@
-state:
-    pc 18
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 8
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = -1
-        registers[3] = 40
-        registers[4] = 8
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 1
-end state
-
 @@@
 state:
     pc 19
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -2530,73 +1288,30 @@ state:
         registers[6] = 0
         registers[7] = 0
 end state
-
-@@@
-state:
-    pc 19
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 8
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = -1
-        registers[3] = 40
-        registers[4] = 8
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 0
-end state
-
 @@@
 state:
     pc 20
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -2614,73 +1329,30 @@ state:
         registers[6] = 0
         registers[7] = 0
 end state
-
-@@@
-state:
-    pc 20
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 8
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = -1
-        registers[3] = 40
-        registers[4] = 8
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 0
-end state
-
 @@@
 state:
     pc 8
     memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
         memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
         memory[7] = 22282240
         memory[8] = 25165824
-        memory[9] = 15138841
+        memory[9] = 16515097
         memory[10] = 3997703
-        memory[11] = 13565977
+        memory[11] = 16318489
         memory[12] = 3997703
         memory[13] = 589825
         memory[14] = 589827
-        memory[15] = 9437206
+        memory[15] = 8519702
         memory[16] = 3801095
-        memory[17] = 9371673
+        memory[17] = 12124185
         memory[18] = 3801095
-        memory[19] = 10944537
+        memory[19] = 12320793
         memory[20] = 23199744
         memory[21] = 1
         memory[22] = -1
@@ -2698,118 +1370,47 @@ state:
         registers[6] = 0
         registers[7] = 0
 end state
-
-@@@
-state:
-    pc 8
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 8
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = 21
-        registers[3] = 40
-        registers[4] = 8
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 0
-end state
-
-@@@
-state:
-    pc 2147483647
-    memory:
-        memory[0] = 11010069
-        memory[1] = 8912920
-        memory[2] = 9437207
-        memory[3] = 22282240
-        memory[4] = 11010069
-        memory[5] = 8912920
-        memory[6] = 9437207
-        memory[7] = 22282240
-        memory[8] = 25165824
-        memory[9] = 15138841
-        memory[10] = 3997703
-        memory[11] = 13565977
-        memory[12] = 3997703
-        memory[13] = 589825
-        memory[14] = 589827
-        memory[15] = 9437206
-        memory[16] = 3801095
-        memory[17] = 9371673
-        memory[18] = 3801095
-        memory[19] = 10944537
-        memory[20] = 23199744
-        memory[21] = 1
-        memory[22] = -1
-        memory[23] = 9
-        memory[24] = 10
-        memory[25] = 8
-        memory[26] = 10
-    registers:
-        registers[0] = 0
-        registers[1] = 10
-        registers[2] = 21
-        registers[3] = 40
-        registers[4] = 8
-        registers[5] = 1
-        registers[6] = 0
-        registers[7] = 0
-end state
-
 Machine halted
 Instructions executed: 33
-Final memory state:
-memory[0] = 11010069
-memory[1] = 8912920
-memory[2] = 9437207
-memory[3] = 22282240
-memory[4] = 11010069
-memory[5] = 8912920
-memory[6] = 9437207
-memory[7] = 22282240
-memory[8] = 25165824
-memory[9] = 15138841
-memory[10] = 3997703
-memory[11] = 13565977
-memory[12] = 3997703
-memory[13] = 589825
-memory[14] = 589827
-memory[15] = 9437206
-memory[16] = 3801095
-memory[17] = 9371673
-memory[18] = 3801095
-memory[19] = 10944537
-memory[20] = 23199744
-memory[21] = 1
-memory[22] = -1
-memory[23] = 9
-memory[24] = 10
-memory[25] = 8
-memory[26] = 10
+Final machine state:
+@@@
+state:
+    pc 9
+    memory:
+        memory[0] = 8716309
+        memory[1] = 8454168
+        memory[2] = 8519703
+        memory[3] = 22282240
+        memory[4] = 8716309
+        memory[5] = 8454168
+        memory[6] = 8519703
+        memory[7] = 22282240
+        memory[8] = 25165824
+        memory[9] = 16515097
+        memory[10] = 3997703
+        memory[11] = 16318489
+        memory[12] = 3997703
+        memory[13] = 589825
+        memory[14] = 589827
+        memory[15] = 8519702
+        memory[16] = 3801095
+        memory[17] = 12124185
+        memory[18] = 3801095
+        memory[19] = 12320793
+        memory[20] = 23199744
+        memory[21] = 1
+        memory[22] = -1
+        memory[23] = 9
+        memory[24] = 10
+        memory[25] = 8
+        memory[26] = 10
+    registers:
+        registers[0] = 0
+        registers[1] = 10
+        registers[2] = 21
+        registers[3] = 40
+        registers[4] = 8
+        registers[5] = 1
+        registers[6] = 0
+        registers[7] = 0
+end state

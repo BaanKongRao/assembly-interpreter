@@ -40,6 +40,7 @@ public class Interpreter extends AbAssembler {
         while (pc < instructions.length) {
             printState();
             pc = instructions[pc].execute(registers, memory, pc);
+            registers[0] = new Word();
             printState();
             instCount++;
         }

@@ -1,8 +1,11 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 import Instruction.AbInstruction;
 import Instruction.Instruction;
@@ -17,6 +20,17 @@ public abstract class AbAssembler {
     }
 
     protected static Instruction[] instructions;
+    protected static final Pattern fileNames = Pattern.compile(".*\\.fasm");
+    
+    protected static void checkFileNames(String inFilename) {
+        if (!fileNames.matcher(inFilename).matches()) {
+            throw new Error("Input file must be a .fasm file.");
+        }
+    }
+
+    protected static String getOutFilename(String inFilename) {
+        return inFilename.replace(".fasm", ".fbin");
+    }
 
     protected static void readFile(String filename) throws SyntaxError, IntegerOverflowException {
         StringBuilder sb = new StringBuilder();
@@ -83,5 +97,14 @@ public abstract class AbAssembler {
             labelsMap.put(label, pos.line - 1);
         });
         return labelsMap;
+    }
+
+    protected static void writeFile(String filename, String output) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filename))) {
+            bw.write(output);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
     }
 }

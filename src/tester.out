@@ -1,0 +1,311 @@
+memory[0] = 8912903
+memory[1] = 9502723
+memory[2] = 655361
+memory[3] = 17301506
+memory[4] = 16777218
+memory[5] = 29360128
+memory[6] = 25165824
+memory[7] = 5
+memory[8] = -1
+memory[9] = 2
+@@@
+state:
+    pc 0
+    memory:
+memory[0] = 8912903
+memory[1] = 9502723
+memory[2] = 655361
+memory[3] = 17301506
+memory[4] = 16777218
+memory[5] = 29360128
+memory[6] = 25165824
+memory[7] = 5
+memory[8] = -1
+memory[9] = 2
+    registers:
+registers[0] = 0
+registers[1] = 0
+registers[2] = 0
+registers[3] = 0
+registers[4] = 0
+registers[5] = 0
+registers[6] = 0
+registers[7] = 0
+end state
+
+@@@
+state:
+    pc 1
+    memory:
+memory[0] = 8912903
+memory[1] = 9502723
+memory[2] = 655361
+memory[3] = 17301506
+memory[4] = 16777218
+memory[5] = 29360128
+memory[6] = 25165824
+memory[7] = 5
+memory[8] = -1
+memory[9] = 2
+    registers:
+registers[0] = 0
+registers[1] = 5
+registers[2] = 0
+registers[3] = 0
+registers[4] = 0
+registers[5] = 0
+registers[6] = 0
+registers[7] = 0
+end state
+
+@@@
+state:
+    pc 1
+    memory:
+memory[0] = 8912903
+memory[1] = 9502723
+memory[2] = 655361
+memory[3] = 17301506
+memory[4] = 16777218
+memory[5] = 29360128
+memory[6] = 25165824
+memory[7] = 5
+memory[8] = -1
+memory[9] = 2
+    registers:
+registers[0] = 0
+registers[1] = 5
+registers[2] = 0
+registers[3] = 0
+registers[4] = 0
+registers[5] = 0
+registers[6] = 0
+registers[7] = 0
+end state
+
+@@@
+state:
+    pc 2
+    memory:
+memory[0] = 8912903
+memory[1] = 9502723
+memory[2] = 655361
+memory[3] = 17301506
+memory[4] = 16777218
+memory[5] = 29360128
+memory[6] = 25165824
+memory[7] = 5
+memory[8] = -1
+memory[9] = 2
+    registers:
+registers[0] = 0
+registers[1] = 5
+registers[2] = -1
+registers[3] = 0
+registers[4] = 0
+registers[5] = 0
+registers[6] = 0
+registers[7] = 0
+end state
+
+@@@
+state:
+    pc 2
+    memory:
+memory[0] = 8912903
+memory[1] = 9502723
+memory[2] = 655361
+memory[3] = 17301506
+memory[4] = 16777218
+memory[5] = 29360128
+memory[6] = 25165824
+memory[7] = 5
+memory[8] = -1
+memory[9] = 2
+    registers:
+registers[0] = 0
+registers[1] = 5
+registers[2] = -1
+registers[3] = 0
+registers[4] = 0
+registers[5] = 0
+registers[6] = 0
+registers[7] = 0
+end state
+
+@@@
+state:
+    pc 3
+    memory:
+memory[0] = 8912903
+memory[1] = 9502723
+memory[2] = 655361
+memory[3] = 17301506
+memory[4] = 16777218
+memory[5] = 29360128
+memory[6] = 25165824
+memory[7] = 5
+memory[8] = -1
+memory[9] = 2
+    registers:
+registers[0] = 0
+registers[1] = 4
+registers[2] = -1
+registers[3] = 0
+registers[4] = 0
+registers[5] = 0
+registers[6] = 0
+registers[7] = 0
+end state
+
+@@@
+state:
+    pc 3
+    memory:
+memory[0] = 8912903
+memory[1] = 9502723
+memory[2] = 655361
+memory[3] = 17301506
+memory[4] = 16777218
+memory[5] = 29360128
+memory[6] = 25165824
+memory[7] = 5
+memory[8] = -1
+memory[9] = 2
+    registers:
+registers[0] = 0
+registers[1] = 4
+registers[2] = -1
+registers[3] = 0
+registers[4] = 0
+registers[5] = 0
+registers[6] = 0
+registers[7] = 0
+end state
+
+@@@
+state:
+    pc 4
+    memory:
+memory[0] = 8912903
+memory[1] = 9502723
+memory[2] = 655361
+memory[3] = 17301506
+memory[4] = 16777218
+memory[5] = 29360128
+memory[6] = 25165824
+memory[7] = 5
+memory[8] = -1
+memory[9] = 2
+    registers:
+registers[0] = 0
+registers[1] = 4
+registers[2] = -1
+registers[3] = 0
+registers[4] = 0
+registers[5] = 0
+registers[6] = 0
+registers[7] = 0
+end state
+
+@@@
+state:
+    pc 4
+    memory:
+memory[0] = 8912903
+memory[1] = 9502723
+memory[2] = 655361
+memory[3] = 17301506
+memory[4] = 16777218
+memory[5] = 29360128
+memory[6] = 25165824
+memory[7] = 5
+memory[8] = -1
+memory[9] = 2
+    registers:
+registers[0] = 0
+registers[1] = 4
+registers[2] = -1
+registers[3] = 0
+registers[4] = 0
+registers[5] = 0
+registers[6] = 0
+registers[7] = 0
+end state
+
+@@@
+state:
+    pc 6
+    memory:
+memory[0] = 8912903
+memory[1] = 9502723
+memory[2] = 655361
+memory[3] = 17301506
+memory[4] = 16777218
+memory[5] = 29360128
+memory[6] = 25165824
+memory[7] = 5
+memory[8] = -1
+memory[9] = 2
+    registers:
+registers[0] = 0
+registers[1] = 4
+registers[2] = -1
+registers[3] = 0
+registers[4] = 0
+registers[5] = 0
+registers[6] = 0
+registers[7] = 0
+end state
+
+@@@
+state:
+    pc 6
+    memory:
+memory[0] = 8912903
+memory[1] = 9502723
+memory[2] = 655361
+memory[3] = 17301506
+memory[4] = 16777218
+memory[5] = 29360128
+memory[6] = 25165824
+memory[7] = 5
+memory[8] = -1
+memory[9] = 2
+    registers:
+registers[0] = 0
+registers[1] = 4
+registers[2] = -1
+registers[3] = 0
+registers[4] = 0
+registers[5] = 0
+registers[6] = 0
+registers[7] = 0
+end state
+
+@@@
+state:
+    pc 2147483647
+    memory:
+memory[0] = 8912903
+memory[1] = 9502723
+memory[2] = 655361
+memory[3] = 17301506
+memory[4] = 16777218
+memory[5] = 29360128
+memory[6] = 25165824
+memory[7] = 5
+memory[8] = -1
+memory[9] = 2
+    registers:
+registers[0] = 0
+registers[1] = 4
+registers[2] = -1
+registers[3] = 0
+registers[4] = 0
+registers[5] = 0
+registers[6] = 0
+registers[7] = 0
+end state
+
+Instructions executed: 6

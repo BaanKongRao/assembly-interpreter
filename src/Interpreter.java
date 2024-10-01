@@ -18,7 +18,10 @@ public class Interpreter extends AbAssembler {
     private static int pc = 0;
     private static int instCount = 0;
 
+    private static StringBuilder sb = new StringBuilder();
+
     public static void interpret(String filename) throws SyntaxError, IntegerOverflowException {
+        checkFileNames(filename);
         for (int i = 0; i < REGISTER_SIZE; i++) {
             registers[i] = new Word();
         }
@@ -27,6 +30,8 @@ public class Interpreter extends AbAssembler {
         }
         pc = 0;
         instCount = 0;
+        
+        sb.setLength(0);
 
         readFile(filename);
         initMemory();
@@ -39,6 +44,9 @@ public class Interpreter extends AbAssembler {
             instCount++;
         }
         System.out.println("Instructions executed: " + instCount);
+        sb.append("Instructions executed: ").append(instCount).append("\n");
+
+        writeFile(filename.replace(".fasm", ".out"), sb.toString());
     }
 
     private static void initMemory() {
@@ -53,8 +61,9 @@ public class Interpreter extends AbAssembler {
 
     private static void printMemory(int indent) {
         for (int i = 0; i < MEMORY_SIZE; i++) {
-            if (memory[i].toInt() != 0) {
+            if (memory[i].toInt() != 0 || i < instructions.length) {
                 System.out.println("    ".repeat(indent) + "memory[" + i + "] = " + memory[i].toInt());
+                sb.append("memory[").append(i).append("] = ").append(memory[i].toInt()).append("\n");
             }
         }
     }
@@ -62,18 +71,26 @@ public class Interpreter extends AbAssembler {
     private static void printRegisters(int indent) {
         for (int i = 0; i < REGISTER_SIZE; i++) {
             System.out.println("    ".repeat(indent) + "registers[" + i + "] = " + registers[i].toInt());
+            sb.append("registers[").append(i).append("] = ").append(registers[i].toInt()).append("\n");
         }
     }
 
     private static void printState() {
         System.out.println("@@@");
+        sb.append("@@@\n");
         System.out.println("state:");
+        sb.append("state:\n");
         System.out.println("    pc " + pc);
+        sb.append("    pc ").append(pc).append("\n");
         System.out.println("    memory:");
+        sb.append("    memory:\n");
         printMemory(2);
         System.out.println("    registers:");
+        sb.append("    registers:\n");
         printRegisters(2);
         System.out.println("end state");
+        sb.append("end state\n");
         System.out.println();
+        sb.append("\n");
     }
 }

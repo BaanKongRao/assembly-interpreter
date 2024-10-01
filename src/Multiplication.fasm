@@ -1,0 +1,29 @@
+        lw 0 3 multiplicand 
+        lw 0 4 multiplier
+        lw 0 5 pivot
+        lw 0 6 result
+        lw 0 7 temp
+        lw 0 1 counter
+        lw 0 2 index
+multiplicand    .fill 32766
+multiplier    .fill 10383
+pivot     .fill 1
+result  .fill 10383
+temp    .fill 0
+counter .fill 1     
+index   .fill 32   
+loop    beq 1 2 wasd
+        add 3 3 3
+        beq 0 0 loop
+        sw 0 0 counter ;reset counter for use in another func
+check   beq 1 2 done
+        nand 6 5 7
+        nand 7 7 7
+        beq 7 5 product
+shift   add 6 6 6
+        add 5 5 5
+        beq 0 0 check
+product add 3 6 6
+        beq 0 0 shift
+done    halt
+        

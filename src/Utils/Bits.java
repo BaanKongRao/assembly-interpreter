@@ -176,11 +176,14 @@ public class Bits extends BitSet {
         if (bits.length() > bitsize) {
             throw new IndexOutOfBoundsException("bits.length(): " + bits.length() + " > bitsize: " + bitsize);
         }
-        int adder = bits.toInt();
-        int sum = this.toInt() + adder;
-        Bits result = fromInt(sum);
-        this.clear();
-        this.or(result);
+        boolean carry = false;
+        for (int i = 0; i < bits.size(); i++) {
+            boolean bitA = this.get(i);
+            boolean bitB = bits.get(i);
+            boolean bitSum = bitA ^ bitB ^ carry;
+            carry = (bitA && bitB) || (bitA && carry) || (bitB && carry);
+            this.set(i, bitSum);
+        }
     }
 
     /**
@@ -329,9 +332,15 @@ public class Bits extends BitSet {
      * @return the new bits object that is the sum of the two bits objects and have size of the bigger bits object
      */
     public static Bits add(Bits a, Bits b) {
-        int numA = a.toInt();
-        int numB = b.toInt();
-        int sum = numA + numB;
-        return fromInt(sum);
+        Bits sum = new Bits(Math.max(a.size(), b.size()));
+        boolean carry = false;
+        for (int i = 0; i < sum.size(); i++) {
+            boolean bitA = a.get(i);
+            boolean bitB = b.get(i);
+            boolean bitSum = bitA ^ bitB ^ carry;
+            carry = (bitA && bitB) || (bitA && carry) || (bitB && carry);
+            sum.set(i, bitSum);
+        }
+        return sum;
     }
 }

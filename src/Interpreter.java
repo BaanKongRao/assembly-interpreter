@@ -44,8 +44,16 @@ public class Interpreter extends AbAssembler {
             printState();
             instCount++;
         }
+        if (pc == Integer.MAX_VALUE) {
+            System.out.println("Machine halted");
+            sb.append("Machine halted\n");
+        }
         System.out.println("Instructions executed: " + instCount);
         sb.append("Instructions executed: ").append(instCount).append("\n");
+
+        System.out.println("Final memory state:");
+        sb.append("Final memory state:\n");
+        printMemory();
 
         writeFile(filename.replace(".fasm", ".out"), sb.toString());
     }

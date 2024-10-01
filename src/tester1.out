@@ -2783,4 +2783,33 @@ state:
         registers[7] = 0
 end state
 
+Machine halted
 Instructions executed: 33
+Final memory state:
+memory[0] = 11010069
+memory[1] = 8912920
+memory[2] = 9437207
+memory[3] = 22282240
+memory[4] = 11010069
+memory[5] = 8912920
+memory[6] = 9437207
+memory[7] = 22282240
+memory[8] = 25165824
+memory[9] = 15138841
+memory[10] = 3997703
+memory[11] = 13565977
+memory[12] = 3997703
+memory[13] = 589825
+memory[14] = 589827
+memory[15] = 9437206
+memory[16] = 3801095
+memory[17] = 9371673
+memory[18] = 3801095
+memory[19] = 10944537
+memory[20] = 23199744
+memory[21] = 1
+memory[22] = -1
+memory[23] = 9
+memory[24] = 10
+memory[25] = 8
+memory[26] = 10

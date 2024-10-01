@@ -64,7 +64,7 @@ public class Interpreter extends AbAssembler {
         for (int i = 0; i < MEMORY_SIZE; i++) {
             if (memory[i].toInt() != 0 || i < instructions.length) {
                 System.out.println("    ".repeat(indent) + "memory[" + i + "] = " + memory[i].toInt());
-                sb.append("memory[").append(i).append("] = ").append(memory[i].toInt()).append("\n");
+                sb.append("    ".repeat(indent)).append("memory[").append(i).append("] = ").append(memory[i].toInt()).append("\n");
             }
         }
     }
@@ -72,7 +72,7 @@ public class Interpreter extends AbAssembler {
     private static void printRegisters(int indent) {
         for (int i = 0; i < REGISTER_SIZE; i++) {
             System.out.println("    ".repeat(indent) + "registers[" + i + "] = " + registers[i].toInt());
-            sb.append("registers[").append(i).append("] = ").append(registers[i].toInt()).append("\n");
+            sb.append("    ".repeat(indent)).append("registers[").append(i).append("] = ").append(registers[i].toInt()).append("\n");
         }
     }
 

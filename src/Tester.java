@@ -15,7 +15,8 @@ public class Tester {
         // testParser();
         // testAssembler();
         // testInterpreter();
-        // testMultiplication();
+        testInterpreterByFile("src/multiplication.fasm");
+        testInterpreterByFile("src/combination.fasm");
     }
 
     public static void testBits() {
@@ -110,45 +111,25 @@ public class Tester {
     }
 
     public static void testAssembler() {
-        // test 1
-        String inFilePath = "src/tester.fasm";
-        try {
-            Assembler.assemble(inFilePath);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return;
-        }
-        
-        // test 2
-        inFilePath = "src/tester1.fasm";
-        try {
-            Assembler.assemble(inFilePath);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return;
-        }
+        testAssemblerByFile("src/tester.fasm");
+        testAssemblerByFile("src/tester1.fasm");
     }
 
     public static void testInterpreter() {
-        String inFilePath = "src/tester.fasm";
-        try {
-            Interpreter.interpret(inFilePath);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return;
-        }
+        testInterpreterByFile("src/tester.fasm");
+        testInterpreterByFile("src/tester1.fasm");
+    }
 
-        inFilePath = "src/tester1.fasm";
+    public static void testAssemblerByFile(String inFilePath) {
         try {
-            Interpreter.interpret(inFilePath);
+            Assembler.assemble(inFilePath);
         } catch (Exception e) {
             e.printStackTrace();
             return;
         }
     }
 
-    public static void testMultiplication() {
-        String inFilePath = "src/multiplication.fasm";
+    public static void testInterpreterByFile(String inFilePath) {
         try {
             Interpreter.interpret(inFilePath);
         } catch (Exception e) {

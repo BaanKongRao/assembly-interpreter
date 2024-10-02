@@ -1,8 +1,9 @@
 package Instruction;
 
-import java.util.Map;
-
+import Utils.Bits;
+import Utils.IntegerOverflowException;
 import Utils.Position;
+import Utils.SyntaxError;
 import Utils.Word;
 
 public class I_TYPE<T> extends AbInstruction {
@@ -25,21 +26,56 @@ public class I_TYPE<T> extends AbInstruction {
     }
 
     @Override
-    public void errorCheck(Map<String, Integer> labelsMap) {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
+    public void errorCheck() throws SyntaxError, IntegerOverflowException {
+        if (ra < 0 || ra > 7) throw new SyntaxError("Invalid register. Valid register range is 0 to 7.", raStart);
+        if (rb < 0 || rb > 7) throw new SyntaxError("Invalid register. Valid register range is 0 to 7.", rbStart);
+
+        Integer offset = (Integer) offsetOrLabel;
+        Bits offsetBits = Bits.fromInt(offset);
+        if (offsetBits.length() > 16) {
+            if (offsetBits.get(31)) return;
+            throw new IntegerOverflowException("Invalid offset. Valid offset range is -32768 to 32767.", offsetOrLabelStart);
+        }
     }
 
     @Override
     public Word toBinary() {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'toBinary'");
+        Bits instBits = null;
+        Bits raBits = Bits.fromInt(ra);
+        Bits rbBits = Bits.fromInt(rb);
+        Bits offsetBits = Bits.fromInt((Integer) offsetOrLabel);
+        switch (inst) {
+            case "lw" -> instBits = Bits.fromInt(0b010);
+            case "sw" -> instBits = Bits.fromInt(0b011);
+            case "beq" -> instBits = Bits.fromInt(0b100);
+        }
+        Word word = new Word();
+        for (int i = 0; i < 16; i++) {
+            word.set(i, offsetBits.get(i));
+        }
+        for (int i = 16; i < 19; i++) {
+            word.set(i, rbBits.get(i - 16));
+        }
+        for (int i = 19; i < 22; i++) {
+            word.set(i, raBits.get(i - 19));
+        }
+        for (int i = 22; i < 25; i++) {
+            word.set(i, instBits.get(i - 22));
+        }
+        return word;
     }
 
     @Override
     public int execute(Word[] registers, Word[] memory, int pc) {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'execute'");
+        Integer offset = (Integer)offsetOrLabel;
+        if(inst.equals("lw")) {
+            registers[rb] = memory[Word.add(registers[ra], Word.fromInt(offset)).toInt()].clone();
+        } else if(inst.equals("sw")) {
+            memory[Word.add(registers[ra], Word.fromInt(offset)).toInt()] = registers[rb].clone();
+        } else if(inst.equals("beq")) {
+            if(registers[rb].equals(registers[ra])) return pc + 1 + offset;
+        }
+        return pc + 1;
     }
 
     @Override

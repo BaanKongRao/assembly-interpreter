@@ -1,8 +1,8 @@
 package Instruction;
 
-import java.util.Map;
-
+import Utils.Bits;
 import Utils.Position;
+import Utils.SyntaxError;
 import Utils.Word;
 
 public class R_TYPE extends AbInstruction {
@@ -25,21 +25,48 @@ public class R_TYPE extends AbInstruction {
     }
 
     @Override
-    public void errorCheck(Map<String, Integer> labelsMap) {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
+    public void errorCheck() throws SyntaxError {
+        if (ra < 0 || ra > 7) throw new SyntaxError("Invalid register. Valid register range is 0 to 7.", raStart);
+        if (rb < 0 || rb > 7) throw new SyntaxError("Invalid register. Valid register range is 0 to 7.", rbStart);
+        if (rd < 0 || rd > 7) throw new SyntaxError("Invalid register. Valid register range is 0 to 7.", rdStart);
     }
 
     @Override
     public Word toBinary() {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'toBinary'");
+        Bits instBits = null;
+        Bits raBits = Bits.fromInt(ra);
+        Bits rbBits = Bits.fromInt(rb);
+        Bits rdBits = Bits.fromInt(rd);
+        switch (inst) {
+            case "add" -> instBits = Bits.fromInt(0b000);
+            case "nand" -> instBits = Bits.fromInt(0b001);
+        }
+        Word word = new Word();
+        for (int i = 0; i < 3; i++) {
+            word.set(i, rdBits.get(i));
+        }
+        for (int i = 16; i < 19; i++) {
+            word.set(i, rbBits.get(i - 16));
+        }
+        for (int i = 19; i < 22; i++) {
+            word.set(i, raBits.get(i - 19));
+        }
+        for (int i = 22; i < 25; i++) {
+            word.set(i, instBits.get(i - 22));
+        }
+        return word;
     }
 
     @Override
     public int execute(Word[] registers, Word[] memory, int pc) {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'execute'");
+        if(inst.equals("add")) {
+            registers[rd] = Word.add(registers[ra], registers[rb]);
+        } else if(inst.equals("nand")) {
+            Word result = Word.and(registers[ra],registers[rb]);
+            result.flip(0,31);
+            registers[rd] = result;
+        }
+        return pc + 1;
     }
 
     @Override

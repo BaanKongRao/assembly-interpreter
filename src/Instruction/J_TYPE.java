@@ -1,8 +1,8 @@
 package Instruction;
 
-import java.util.Map;
-
+import Utils.Bits;
 import Utils.Position;
+import Utils.SyntaxError;
 import Utils.Word;
 
 public class J_TYPE extends AbInstruction {
@@ -21,26 +21,37 @@ public class J_TYPE extends AbInstruction {
     }
 
     @Override
-    public void errorCheck(Map<String, Integer> labelsMap) {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
+    public void errorCheck() throws SyntaxError {
+        if (ra < 0 || ra > 7) throw new SyntaxError("Invalid register. Valid register range is 0 to 7.", raStart);
+        if (rb < 0 || rb > 7) throw new SyntaxError("Invalid register. Valid register range is 0 to 7.", rbStart);
     }
 
     @Override
     public Word toBinary() {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'toBinary'");
+        Bits instBits = Bits.fromInt(0b101);
+        Bits raBits = Bits.fromInt(ra);
+        Bits rbBits = Bits.fromInt(rb);
+        Word word = new Word();
+        for (int i = 16; i < 19; i++) {
+            word.set(i, rbBits.get(i - 16));
+        }
+        for (int i = 19; i < 22; i++) {
+            word.set(i, raBits.get(i - 19));
+        }
+        for (int i = 22; i < 25; i++) {
+            word.set(i, instBits.get(i - 22));
+        }
+        return word;
     }
 
     @Override
     public int execute(Word[] registers, Word[] memory, int pc) {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'execute'");
+        registers[rb] = Word.fromInt(pc + 1);
+        return registers[ra].toInt();
     }
 
     @Override
     public String toString() {
         return super.toString(String.format("%s, %d, %d", this.inst, this.ra, this.rb));
     }
-
 }

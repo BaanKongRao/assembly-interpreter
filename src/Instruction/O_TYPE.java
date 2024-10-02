@@ -1,7 +1,6 @@
 package Instruction;
 
-import java.util.Map;
-
+import Utils.Bits;
 import Utils.Position;
 import Utils.Word;
 
@@ -11,21 +10,26 @@ public class O_TYPE extends AbInstruction {
     }
 
     @Override
-    public void errorCheck(Map<String, Integer> labelsMap) {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'errorCheck'");
-    }
+    public void errorCheck() {}
 
     @Override
     public Word toBinary() {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'toBinary'");
+        Bits instBits = null;
+        switch (inst) {
+            case "halt" -> instBits = Bits.fromInt(0b110);
+            case "noop" -> instBits = Bits.fromInt(0b111);
+        }
+        Word word = new Word();
+        for (int i = 22; i < 25; i++) {
+            word.set(i, instBits.get(i - 22));
+        }
+        return word;
     }
 
     @Override
     public int execute(Word[] registers, Word[] memory, int pc) {
-        // TODO Implement this
-        throw new UnsupportedOperationException("Unimplemented method 'execute'");
+        if(inst.equals("halt")) return Integer.MAX_VALUE;
+        return pc + 1;
     }
 
     @Override

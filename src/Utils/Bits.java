@@ -3,7 +3,7 @@ package Utils;
 import java.util.BitSet;
 
 public class Bits extends BitSet {
-    protected static int bitsize = 1 << 6;
+    protected int bitsize = 1 << 6;
 
     /**
      * Creates a new bit set of size 64.
@@ -177,17 +177,18 @@ public class Bits extends BitSet {
             throw new IndexOutOfBoundsException("bits.length(): " + bits.length() + " > bitsize: " + bitsize);
         }
         boolean carry = false;
-        for (int i = 0; i < bits.length(); i++) {
-            boolean a = this.get(i);
-            boolean b = bits.get(i);
-            boolean sum = a ^ b ^ carry;
-            carry = (a && b) || (a && carry) || (b && carry);
-            this.set(i, sum);
+        for (int i = 0; i < bits.size(); i++) {
+            boolean bitA = this.get(i);
+            boolean bitB = bits.get(i);
+            boolean bitSum = bitA ^ bitB ^ carry;
+            carry = (bitA && bitB) || (bitA && carry) || (bitB && carry);
+            this.set(i, bitSum);
         }
     }
 
     /**
      * Converts the bits to an int.
+     * can handle negative numbers(2's complement).
      * 
      * @return the int value
      */
@@ -246,15 +247,17 @@ public class Bits extends BitSet {
 
     /**
      * Converts the int to a Bits object.
+     * can handle negative numbers(2's complement).
      * 
      * @param i the int value
      * @return the Bits object
      */
     public static Bits fromInt(int i) {
-        Bits bits = new Bits();
+        Bits bits = new Bits(Integer.SIZE);
         for (int j = 0; j < Integer.SIZE; j++) {
             bits.set(j, (i & (1 << j)) != 0);
         }
+        if (bits.length() > bits.bitsize) throw new RuntimeException("the integer is too big to fit in the bits object");
         return bits;
     }
 
@@ -265,10 +268,11 @@ public class Bits extends BitSet {
      * @return the Bits object
      */
     public static Bits fromLong(long l) {
-        Bits bits = new Bits();
+        Bits bits = new Bits(Long.SIZE);
         for (int i = 0; i < Long.SIZE; i++) {
             bits.set(i, (l & (1 << i)) != 0);
         }
+        if (bits.length() > bits.bitsize) throw new RuntimeException("the long is too big to fit in the bits object");
         return bits;
     }
 
@@ -299,27 +303,7 @@ public class Bits extends BitSet {
 
     @Override
     public Bits clone() {
-        Bits bits = new Bits(bitsize);
-        for (int i = 0; i < this.length(); i++) {
-            bits.set(i, this.get(i));
-        }
-        return bits;
-    }
-
-    public Bits clone(int nbits) {
-        Bits bits = new Bits(nbits);
-        for (int i = 0; i < this.length(); i++) {
-            bits.set(i, this.get(i));
-        }
-        return bits;
-    }
-
-    public Bits clone(Bits bits) {
-        Bits newBits = new Bits(bits.size());
-        for (int i = 0; i < bits.length(); i++) {
-            newBits.set(i, bits.get(i));
-        }
-        return newBits;
+        return (Bits) super.clone();
     }
 
     /**
@@ -334,27 +318,23 @@ public class Bits extends BitSet {
             throw new IllegalArgumentException("a.size(): " + a.size() + " != b.size(): " + b.size());
         }
         Bits and = new Bits(a.size());
-        and.clone(a);
-        and.and(b);
+        and.and(a);
         return and;
     }
 
     /**
-     * Adds two bits objects and return new bits object. The bits objects must have
-     * the same size.
+     * Adds two bits objects and return new bits object.
+     * 
+     * IMPORTANT: the negative must be second parameter.
      * 
      * @param a the first bits object
      * @param b the second bits object
-     * @return the new bits object that is the sum of the two bits objects
-     * @throws IllegalArgumentException if the bits objects have different sizes
+     * @return the new bits object that is the sum of the two bits objects and have size of the bigger bits object
      */
     public static Bits add(Bits a, Bits b) {
-        if (a.size() != b.size()) {
-            throw new IllegalArgumentException("a.size(): " + a.size() + " != b.size(): " + b.size());
-        }
-        Bits sum = new Bits(a.size());
+        Bits sum = new Bits(Math.max(a.size(), b.size()));
         boolean carry = false;
-        for (int i = 0; i < a.length(); i++) {
+        for (int i = 0; i < sum.size(); i++) {
             boolean bitA = a.get(i);
             boolean bitB = b.get(i);
             boolean bitSum = bitA ^ bitB ^ carry;

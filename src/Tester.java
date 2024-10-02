@@ -14,6 +14,8 @@ public class Tester {
         // testLexer();
         // testParser();
         // testAssembler();
+        // testInterpreter();
+        // testMultiplication();
     }
 
     public static void testBits() {
@@ -45,7 +47,7 @@ public class Tester {
         System.out.println(xor);
         System.out.println("--------------~Word1--------------");
         Word not1 = word1.clone();
-        not1.flip(0, 32);
+        not1.flip(0, 31);
         System.out.println(not1);
         System.out.println("--------------Word1 + Word2--------------");
         Word add = Word.add(word1, word2);
@@ -108,10 +110,47 @@ public class Tester {
     }
 
     public static void testAssembler() {
-        String inFilePath = "src/tester1.fasm";
-        String outFilePath = "src/tester1.fbin";
+        // test 1
+        String inFilePath = "src/tester.fasm";
         try {
-            Assembler.assemble(inFilePath, outFilePath);
+            Assembler.assemble(inFilePath);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
+        
+        // test 2
+        inFilePath = "src/tester1.fasm";
+        try {
+            Assembler.assemble(inFilePath);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
+    }
+
+    public static void testInterpreter() {
+        String inFilePath = "src/tester.fasm";
+        try {
+            Interpreter.interpret(inFilePath);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
+
+        inFilePath = "src/tester1.fasm";
+        try {
+            Interpreter.interpret(inFilePath);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
+    }
+
+    public static void testMultiplication() {
+        String inFilePath = "src/multiplication.fasm";
+        try {
+            Interpreter.interpret(inFilePath);
         } catch (Exception e) {
             e.printStackTrace();
             return;

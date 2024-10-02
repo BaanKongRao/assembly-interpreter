@@ -116,7 +116,7 @@ public class Bits extends BitSet {
         if (fromIndex > toIndex) {
             throw new IllegalArgumentException("fromIndex: " + fromIndex + " > toIndex: " + toIndex);
         }
-        if (toIndex >= bitsize) {
+        if (toIndex > bitsize) {
             throw new IndexOutOfBoundsException("toIndex: " + toIndex + " > bitsize: " + bitsize);
         }
         super.flip(fromIndex, toIndex);

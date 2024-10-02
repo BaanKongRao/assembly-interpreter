@@ -63,7 +63,7 @@ public class R_TYPE extends AbInstruction {
             registers[rd] = Word.add(registers[ra], registers[rb]);
         } else if(inst.equals("nand")) {
             Word result = Word.and(registers[ra],registers[rb]);
-            result.flip(0,31);
+            result.flip(0,32);
             registers[rd] = result;
         }
         return pc + 1;

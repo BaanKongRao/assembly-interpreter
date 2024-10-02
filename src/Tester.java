@@ -47,7 +47,7 @@ public class Tester {
         System.out.println(xor);
         System.out.println("--------------~Word1--------------");
         Word not1 = word1.clone();
-        not1.flip(0, 31);
+        not1.flip(0, 32);
         System.out.println(not1);
         System.out.println("--------------Word1 + Word2--------------");
         Word add = Word.add(word1, word2);

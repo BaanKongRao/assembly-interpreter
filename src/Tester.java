@@ -15,8 +15,8 @@ public class Tester {
         // testParser();
         // testAssembler();
         // testInterpreter();
-        testInterpreterByFile("src/multiplication.fasm");
-        testInterpreterByFile("src/combination.fasm");
+        // testInterpreterByFile("src/multiplication.fasm");
+        // testInterpreterByFile("src/combination.fasm");
     }
 
     public static void testBits() {

@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.InputStreamReader;
 import java.util.List;
 
 import Instruction.Instruction;
@@ -15,6 +16,7 @@ public class Tester {
         // testParser();
         // testAssembler();
         // testInterpreter();
+        testInterpreterTermInputFileName();
         // testInterpreterByFile("src/multiplication.fasm");
         // testInterpreterByFile("src/combination.fasm");
     }
@@ -132,6 +134,23 @@ public class Tester {
     public static void testInterpreterByFile(String inFilePath) {
         try {
             Interpreter.interpret(inFilePath);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
+    }
+
+    public static void testInterpreterTermInputFileName() {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            String input;
+            while (true) {
+                System.out.print("Enter the file name: ");
+                input = br.readLine();
+                if (input.equals("exit")) {
+                    break;
+                }
+                testInterpreterByFile(input);
+            }
         } catch (Exception e) {
             e.printStackTrace();
             return;

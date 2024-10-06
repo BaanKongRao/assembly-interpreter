@@ -6,3 +6,4 @@
 
 # run output
 **/*.out
+**/*.fbin

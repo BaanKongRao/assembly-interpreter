@@ -3,3 +3,7 @@
 
 # build output
 /bin
+
+# run output
+**/*.out
+**/*.fbin

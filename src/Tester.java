@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.InputStreamReader;
 import java.util.List;
 
 import Instruction.Instruction;
@@ -15,7 +16,9 @@ public class Tester {
         // testParser();
         // testAssembler();
         // testInterpreter();
-        // testMultiplication();
+        testInterpreterTermInputFileName();
+        // testInterpreterByFile("src/multiplication.fasm");
+        // testInterpreterByFile("src/combination.fasm");
     }
 
     public static void testBits() {
@@ -47,7 +50,7 @@ public class Tester {
         System.out.println(xor);
         System.out.println("--------------~Word1--------------");
         Word not1 = word1.clone();
-        not1.flip(0, 31);
+        not1.flip(0, 32);
         System.out.println(not1);
         System.out.println("--------------Word1 + Word2--------------");
         Word add = Word.add(word1, word2);
@@ -110,35 +113,25 @@ public class Tester {
     }
 
     public static void testAssembler() {
-        // test 1
-        String inFilePath = "src/tester.fasm";
-        try {
-            Assembler.assemble(inFilePath);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return;
-        }
-        
-        // test 2
-        inFilePath = "src/tester1.fasm";
-        try {
-            Assembler.assemble(inFilePath);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return;
-        }
+        testAssemblerByFile("src/tester.fasm");
+        testAssemblerByFile("src/tester1.fasm");
     }
 
     public static void testInterpreter() {
-        String inFilePath = "src/tester.fasm";
+        testInterpreterByFile("src/tester.fasm");
+        testInterpreterByFile("src/tester1.fasm");
+    }
+
+    public static void testAssemblerByFile(String inFilePath) {
         try {
-            Interpreter.interpret(inFilePath);
+            Assembler.assemble(inFilePath);
         } catch (Exception e) {
             e.printStackTrace();
             return;
         }
+    }
 
-        inFilePath = "src/tester1.fasm";
+    public static void testInterpreterByFile(String inFilePath) {
         try {
             Interpreter.interpret(inFilePath);
         } catch (Exception e) {
@@ -147,10 +140,17 @@ public class Tester {
         }
     }
 
-    public static void testMultiplication() {
-        String inFilePath = "src/multiplication.fasm";
-        try {
-            Interpreter.interpret(inFilePath);
+    public static void testInterpreterTermInputFileName() {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            String input;
+            while (true) {
+                System.out.print("Enter the file name: ");
+                input = br.readLine();
+                if (input.equals("exit")) {
+                    break;
+                }
+                testInterpreterByFile(input);
+            }
         } catch (Exception e) {
             e.printStackTrace();
             return;

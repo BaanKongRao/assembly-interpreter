@@ -87,19 +87,17 @@ public abstract class AbAssembler {
 
     protected static Map<String, Integer> resolveLabels() throws SyntaxError {
         Map<String, Position> labelsPosMap = new HashMap<>();
-        for (Instruction instruction : instructions) {
-            AbInstruction abInstruction = (AbInstruction) instruction;
+        Map<String, Integer> labelsMap = new HashMap<>();
+        for (int i = 0; i < instructions.length; i++) {
+            AbInstruction abInstruction = (AbInstruction) instructions[i];
             if (abInstruction.label == null) continue;
             if (labelsPosMap.containsKey(abInstruction.label)) {
                 throw new SyntaxError("Label " + abInstruction.label + " is already defined at "
                         + labelsPosMap.get(abInstruction.label), abInstruction.labelStart);
             }
             labelsPosMap.put(abInstruction.label, abInstruction.labelStart);
+            labelsMap.put(abInstruction.label, i);
         }
-        Map<String, Integer> labelsMap = new HashMap<>();
-        labelsPosMap.forEach((label, pos) -> {
-            labelsMap.put(label, pos.line - 1);
-        });
         return labelsMap;
     }
 

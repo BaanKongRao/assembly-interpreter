@@ -36,6 +36,7 @@ public class Interpreter extends AbAssembler {
         sb.setLength(0);
 
         readFile(filename);
+        initRegisters();
         initMemory();
 
         printMemory();
@@ -59,6 +60,10 @@ public class Interpreter extends AbAssembler {
         printState();
 
         writeFile(filename.replace(".fasm", ".out"), sb.toString());
+    }
+
+    private static void initRegisters() {
+        registers[5] = Word.fromInt(instructions.length - 1);
     }
 
     private static void initMemory() {

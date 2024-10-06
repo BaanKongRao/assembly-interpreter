@@ -8,36 +8,6 @@ public class Word extends Bits {
         super(32);
     }
 
-    @Override
-    public String toBinaryString() {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < this.length(); i++) {
-            sb.insert(0, this.get(i) ? "1" : "0");
-        }
-        for (int i = this.length(); i < bitsize; i++) {
-            sb.insert(0, "0");
-        }
-        sb.insert(0, "0b");
-        return sb.toString();
-    }
-
-    @Override
-    public String toHexString() {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < this.length(); i += 4) {
-            int n = 0;
-            for (int j = 0; j < 4; j++) {
-                n += this.get(i + j) ? (1 << j) : 0;
-            }
-            sb.insert(0, Integer.toHexString(n));
-        }
-        for (int i = this.length(); i < bitsize; i += 4) {
-            sb.insert(0, "0");
-        }
-        sb.insert(0, "0x");
-        return sb.toString();
-    }
-
     /**
      * Creates a new word from a integer.
      * @param i the integer

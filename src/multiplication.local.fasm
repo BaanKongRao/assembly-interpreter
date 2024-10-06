@@ -16,7 +16,7 @@ skip    add 5 5 5 ;shift pivot left
 done    halt ;stop program
 mcand   .fill 32766
 mplier  .fill 10383
-bitC    .fill 16
+bitC    .fill 33
 one     .fill 1
 neg1    .fill -1
 mulAd   .fill mul

@@ -1,6 +1,5 @@
 package Instruction;
 
-import Utils.Bits;
 import Utils.IntegerOverflowException;
 import Utils.Position;
 import Utils.Word;
@@ -18,8 +17,7 @@ public class FILL<T> extends AbInstruction {
     @Override
     public void errorCheck() throws IntegerOverflowException {
         Integer number = (Integer) numberOrLabel;
-        Bits numberBits = Bits.fromInt(number);
-        if (numberBits.length() > 32) {
+        if (number < Integer.MIN_VALUE || number > Integer.MAX_VALUE) {
             throw new IntegerOverflowException("Number is too large to fit in 32 bits", numberOrLabelStart);
         }
     }

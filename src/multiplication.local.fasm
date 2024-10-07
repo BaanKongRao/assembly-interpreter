@@ -5,12 +5,12 @@
 mul     beq 4 0 done ;if bit count equal 0 jump to done
         lw 0 6 neg1 ;load -1 to reg 6
         add 4 6 4 ;minus bit count by 1
-        nand 2 5 6 ;nand mcand and pivot to check bit
+        nand 2 5 6 ;nand multiplicand and pivot to check bit
         nand 6 6 6 ;nand result to flip bits
         beq 6 0 skip ;skip if result equal 0
-        add 1 3 1 ;add mplier to result
+        add 1 3 1 ;add multiplier to result
 skip    add 5 5 5 ;shift pivot left
-        add 3 3 3 ;shift mplier left
+        add 3 3 3 ;shift multiplier left
         lw 0 6 mulAd ;load mul for call(loop)
         jalr 6 0 ;loop
 done    halt ;stop program

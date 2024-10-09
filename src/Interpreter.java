@@ -22,7 +22,7 @@ public class Interpreter extends AbAssembler {
     private static StringBuilder sb = new StringBuilder();
 
     public static void interpret(String filename) throws SyntaxError, IntegerOverflowException {
-        checkFileNames(filename);
+        filename = checkFileNames(filename);
         for (int i = 0; i < REGISTER_SIZE; i++) {
             registers[i] = new Word();
         }

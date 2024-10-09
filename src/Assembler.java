@@ -15,7 +15,7 @@ public class Assembler extends AbAssembler {
      * @param filename: the name of the file to assemble
      */
     public static void assemble(String inFilename) throws SyntaxError, IntegerOverflowException {
-        checkFileNames(inFilename);
+        inFilename = checkFileNames(inFilename);
         readFile(inFilename);
         writeFile(getOutFilename(inFilename), getAssemblerOutput());
     }

@@ -1,11 +1,11 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Pattern;
 
 import Instruction.AbInstruction;
 import Instruction.Instruction;
@@ -20,12 +20,16 @@ public abstract class AbAssembler {
     }
 
     protected static Instruction[] instructions;
-    protected static final Pattern fileNames = Pattern.compile(".*\\.fasm");
     
-    protected static void checkFileNames(String inFilename) {
-        if (!fileNames.matcher(inFilename).matches()) {
-            throw new Error("Input file must be a .fasm file.");
+    protected static String checkFileNames(String inFilename) {
+        if (!inFilename.endsWith(".fasm")) {
+            File file = new File(inFilename + ".fasm");
+            if (file.exists()) {
+                return inFilename + ".fasm";
+            }
+            throw new IllegalArgumentException("Input file must be a .fasm file");
         }
+        return inFilename;
     }
 
     protected static String getOutFilename(String inFilename) {

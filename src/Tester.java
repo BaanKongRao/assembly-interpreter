@@ -61,7 +61,7 @@ public class Tester {
     }
 
     public static void testLexer() {
-        String filePath = "src/tester.fasm";
+        String filePath = "src/fiveToZero.fasm";
         File file = new File(filePath);
         StringBuilder sb = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -87,7 +87,7 @@ public class Tester {
     }
 
     public static void testParser() {
-        String filePath = "src/tester1.fasm";
+        String filePath = "src/4timeInput.fasm";
         File file = new File(filePath);
         StringBuilder sb = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -113,13 +113,13 @@ public class Tester {
     }
 
     public static void testAssembler() {
-        testAssemblerByFile("src/tester.fasm");
-        testAssemblerByFile("src/tester1.fasm");
+        testAssemblerByFile("src/fiveToZero.fasm");
+        testAssemblerByFile("src/4timeInput.fasm");
     }
 
     public static void testInterpreter() {
-        testInterpreterByFile("src/tester.fasm");
-        testInterpreterByFile("src/tester1.fasm");
+        testInterpreterByFile("src/fiveToZero.fasm");
+        testInterpreterByFile("src/4timeInput.fasm");
     }
 
     public static void testAssemblerByFile(String inFilePath) {

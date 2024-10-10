@@ -1,0 +1,63 @@
+        lw 0 1 n ;load n into first function input
+        lw 0 2 r ;load r into second function input
+        lw 0 6 combAd ;load comb for call
+        jalr 6 7 ;call comb
+        halt ;stop program
+comb    lw 0 6 three ;load 3 to temp
+        add 5 6 5 ;allocate 3 stack slot
+        sw 5 7 zero ;store return address in first stack slot
+        lw 0 6 neg1 ;load -1 to reg 6
+        add 5 6 6 ;calculate second stack slot
+        sw 6 1 zero ;store first arg into second stack slot
+        lw 0 6 neg2 ;load -2 to reg 6
+        add 5 6 6 ;calculate third stack slot
+        sw 6 2 zero ;store second arg into third stack slot
+        beq 1 2 ret1 ;check if n = r
+        beq 2 0 ret1 ;check if r = 0
+retRec  lw 0 6 neg1 ;load -1 to reg 6
+        add 5 6 6 ;calculate second stack slot
+        lw 6 1 zero ;load old arg 1 into arg 1
+        lw 0 6 neg1 ;load -1 to reg 6
+        add 1 6 1 ;minus arg 1 by 1
+        lw 0 6 neg2 ;load -2 to reg 6
+        add 5 6 6 ;calculate third stack slot
+        lw 6 2 zero ;load old arg 2 into arg 2
+        lw 0 6 combAd ;load comb for call
+        jalr 6 7 ;call comb with arg n-1 and r
+        lw 0 6 neg1 ;load -1 to reg 6
+        add 5 6 6 ;calculate second stack slot
+        lw 6 1 zero ;load old arg 1 into arg 1
+        lw 0 6 neg1 ;load -1 to reg 6
+        add 1 6 1 ;minus arg 1 by 1
+        lw 0 6 neg2 ;load -2 to reg 6
+        add 5 6 6 ;calculate third stack slot
+        lw 6 2 zero ;load old arg 2 into arg 2
+        lw 0 6 neg1 ;load -1 to reg 6
+        add 2 6 2 ;minus arg 2 by 1
+        lw 0 6 one ;load 1 to reg 6
+        add 5 6 5 ;allocate 1 stack slot
+        sw 5 3 zero ;store result from comb(n-1,r) into stack
+        lw 0 6 combAd ;load comb for call
+        jalr 6 7 ;call comb with arg n-1 and r-1
+        lw 5 6 zero ;load result from comb(n-1,r) into reg 6
+        add 3 6 3 ;add result of comb(n-1,r) and comb(n-1,r-1)
+        lw 0 6 neg1 ;load -1 to reg 6
+        add 5 6 5 ;release 1 stack slot
+        lw 5 7 zero ;get return address from stack
+        lw 0 6 neg3 ;load -3 to reg 6
+        add 5 6 5 ;release 3 stack slot
+        jalr 7 0 ;return back
+ret1    lw 0 3 one ;load 1 into function return reg
+        lw 5 7 zero ;get return address from stack
+        lw 0 6 neg3 ;load -3 to reg 6
+        add 5 6 5 ;release 3 stack slot
+        jalr 7 0 ;return back
+n       .fill 7
+r       .fill 3
+three   .fill 3
+one     .fill 1
+zero    .fill 0
+neg1    .fill -1
+neg2    .fill -2
+neg3    .fill -3
+combAd  .fill comb

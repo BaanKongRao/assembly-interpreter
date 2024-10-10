@@ -23,7 +23,7 @@ public class Assembler extends AbAssembler {
     private static String getAssemblerOutput() {
         StringBuilder sb = new StringBuilder();
         for (Instruction instruction : instructions) {
-            sb.append(instruction.toBinaryString().replace("0b", "")).append("\n");
+            sb.append(instruction.toBinary().toInt()).append("\n");
         }
         return sb.toString();
     }

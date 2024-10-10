@@ -1,0 +1,50 @@
+        lw 0 1 n ;load input to reg 1(first function arg)
+        lw 0 6 facAd ;load fac for call
+        jalr 6 7 ;call fac
+        halt ;stop program
+fac     lw 0 6 one ;load 1 to reg 6
+        add 5 6 5 ;allocate 1 stack slot
+        sw 5 7 zero ;store return address to stack
+        lw 0 3 one ;load 1 to reg 3
+fLoop   beq 1 0 done ;if n = 0 return
+        add 3 0 2 ;copy reg 3 to reg 2
+        lw 0 6 mulAd ;load mul for call
+        jalr 6 7 ;call mul
+        lw 0 6 neg1 ;load -1 to reg 6
+        add 1 6 1 ;minus reg 1 by 1
+        lw 0 6 flpAd ;load loop for call
+        jalr 6 0 ;loop
+done    lw 5 7 zero ;load return address from stack
+        lw 0 6 neg1 ;load -1 to reg 6
+        add 5 6 5 ;release stack
+        jalr 7 0 ;return
+mul     lw 0 6 one ;load 1 to reg 6
+        add 5 6 5 ;allocate 1 stack slot
+        sw 5 7 zero ;store return address into stack
+        lw 0 3 zero ;reset reg 3
+        lw 0 4 bitC ;load bit count to reg 4
+        lw 0 7 one ;load pivot to reg 7
+mLoop   beq 4 0 mRet ;if bit count equal 0 return
+        lw 0 6 neg1 ;load -1 to reg 6
+        add 4 6 4 ;minus bit count by 1
+        nand 1 7 6 ;nand multiplicand and pivot to check bit
+        nand 6 6 6 ;nand result with itself to flip bit
+        beq 6 0 mSkip ;skip if result equal 0
+        add 3 2 3 ;add multiplier to result
+mSkip   add 7 7 7 ;shift pivot left
+        add 2 2 2 ;shift multiplier left
+        lw 0 6 mlpAd ;load loop for call
+        jalr 6 0 ;loop
+mRet    lw 5 7 zero ;load return address from stack
+        lw 0 6 neg1 ;load -1 to reg 6
+        add 5 6 5 ;release stack
+        jalr 7 0 ;return
+n       .fill 5
+bitC    .fill 33
+one     .fill 1
+zero    .fill 0
+neg1    .fill -1
+facAd   .fill fac
+flpAd   .fill fLoop
+mulAd   .fill mul
+mlpAd   .fill mLoop

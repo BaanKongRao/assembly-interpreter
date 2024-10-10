@@ -16,7 +16,8 @@ public class Tester {
         // testParser();
         // testAssembler();
         // testInterpreter();
-        testInterpreterTermInputFileName();
+        testAssemblerTermInputFileName();
+        // testInterpreterTermInputFileName();
         // testInterpreterByFile("src/multiplication.fasm");
         // testInterpreterByFile("src/combination.fasm");
     }
@@ -134,6 +135,23 @@ public class Tester {
     public static void testInterpreterByFile(String inFilePath) {
         try {
             Interpreter.interpret(inFilePath);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
+    }
+
+    public static void testAssemblerTermInputFileName() {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            String input;
+            while (true) {
+                System.out.print("Enter the file name: ");
+                input = br.readLine();
+                if (input.equals("exit")) {
+                    break;
+                }
+                testAssemblerByFile(input);
+            }
         } catch (Exception e) {
             e.printStackTrace();
             return;

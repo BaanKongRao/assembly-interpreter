@@ -16,8 +16,9 @@ public class Tester {
         // testParser();
         // testAssembler();
         // testInterpreter();
-        testAssemblerTermInputFileName();
+        // testAssemblerTermInputFileName();
         // testInterpreterTermInputFileName();
+        testByTermInputFileName();
         // testInterpreterByFile("src/multiplication.fasm");
         // testInterpreterByFile("src/combination.fasm");
     }
@@ -168,6 +169,45 @@ public class Tester {
                     break;
                 }
                 testInterpreterByFile(input);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
+    }
+
+    public static void testByTermInputFileName() {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            System.out.println("Type 'exit' to exit the program.");
+            while (true) {
+                int mode;
+                String input;
+                System.out.print("Enter the file name: ");
+                input = br.readLine();
+                if (input.equals("exit")) {
+                    break;
+                }
+                System.out.println("Mode");
+                System.out.println("1: Assembler");
+                System.out.println("2: Interpreter");
+                System.out.println("Select the mode: ");
+                input = br.readLine();
+                if (input.equals("exit")) {
+                    break;
+                } else {
+                    mode = Integer.parseInt(input);
+                }
+                switch (mode) {
+                    case 1:
+                        testAssemblerByFile(input);
+                        break;
+                    case 2:
+                        testInterpreterByFile(input);
+                        break;
+                    default:
+                        System.out.println("Invalid mode.");
+                        break;
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

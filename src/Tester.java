@@ -180,7 +180,7 @@ public class Tester {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
             System.out.println("Type 'exit' to exit the program.");
             while (true) {
-                int mode;
+                String mode;
                 String input;
                 System.out.print("Enter the file name: ");
                 input = br.readLine();
@@ -191,13 +191,11 @@ public class Tester {
                 System.out.println("1: Assembler");
                 System.out.println("2: Interpreter");
                 System.out.print("Select the mode: ");
-                input = br.readLine();
+                mode = br.readLine();
                 if (input.equals("exit")) {
                     break;
-                } else {
-                    mode = Integer.parseInt(input);
                 }
-                switch (mode) {
+                switch (Integer.parseInt(mode)) {
                     case 1:
                         testAssemblerByFile(input);
                         break;

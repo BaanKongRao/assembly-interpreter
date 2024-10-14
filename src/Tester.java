@@ -190,7 +190,7 @@ public class Tester {
                 System.out.println("Mode");
                 System.out.println("1: Assembler");
                 System.out.println("2: Interpreter");
-                System.out.println("Select the mode: ");
+                System.out.print("Select the mode: ");
                 input = br.readLine();
                 if (input.equals("exit")) {
                     break;

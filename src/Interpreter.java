@@ -1,3 +1,5 @@
+import java.io.FileNotFoundException;
+
 import Utils.IntegerOverflowException;
 import Utils.SyntaxError;
 import Utils.Word;
@@ -21,7 +23,7 @@ public class Interpreter extends AbAssembler {
 
     private static StringBuilder sb = new StringBuilder();
 
-    public static void interpret(String filename) throws SyntaxError, IntegerOverflowException {
+    public static void interpret(String filename) throws SyntaxError, IntegerOverflowException, FileNotFoundException {
         filename = checkFileNames(filename);
         for (int i = 0; i < REGISTER_SIZE; i++) {
             registers[i] = new Word();

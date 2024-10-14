@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
@@ -21,13 +22,13 @@ public abstract class AbAssembler {
 
     protected static Instruction[] instructions;
     
-    protected static String checkFileNames(String inFilename) {
+    protected static String checkFileNames(String inFilename) throws FileNotFoundException {
         if (!inFilename.endsWith(".fasm")) {
             File file = new File(inFilename + ".fasm");
             if (file.exists()) {
                 return inFilename + ".fasm";
             }
-            throw new IllegalArgumentException("Input file must be a .fasm file");
+            throw new FileNotFoundException("File " + inFilename + ".fasm not found");
         }
         return inFilename;
     }

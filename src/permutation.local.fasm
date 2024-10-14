@@ -1,0 +1,64 @@
+        lw 0 1 n
+        lw 0 2 r
+        lw 0 6 pnrAd
+        jalr 6 7
+        halt
+pnr     lw 0 6 two
+        add 5 6 5
+        sw 5 7 zero
+        lw 0 6 neg1
+        add 5 6 6
+        sw 6 1 zero
+        beq 2 0 ret1
+        lw 0 6 neg1
+        add 1 6 1
+        add 2 6 2
+        lw 0 6 pnrAd
+        jalr 6 7
+        lw 0 6 neg1
+        add 5 6 6
+        lw 6 1 zero
+        add 3 0 2
+        lw 0 6 mulAd
+        jalr 6 7
+        lw 5 7 zero
+        lw 0 6 neg2
+        add 5 6 5
+        jalr 7 0;
+ret1    lw 5 7 zero
+        lw 0 6 neg2
+        add 5 6 5
+        lw 0 3 one
+        jalr 7 0
+mul     lw 0 6 one ;load 1 to reg 6
+        add 5 6 5 ;allocate 1 stack slot
+        sw 5 7 zero ;store return address into stack
+        lw 0 3 zero ;reset reg 3
+        lw 0 4 bitC ;load bit count to reg 4
+        lw 0 7 one ;load pivot to reg 7
+mLoop   beq 4 0 mRet ;if bit count equal 0 return
+        lw 0 6 neg1 ;load -1 to reg 6
+        add 4 6 4 ;minus bit count by 1
+        nand 1 7 6 ;nand multiplicand and pivot to check bit
+        nand 6 6 6 ;nand result with itself to flip bit
+        beq 6 0 mSkip ;skip if result equal 0
+        add 3 2 3 ;add multiplier to result
+mSkip   add 7 7 7 ;shift pivot left
+        add 2 2 2 ;shift multiplier left
+        lw 0 6 mlpAd ;load loop for call
+        jalr 6 0 ;loop
+mRet    lw 5 7 zero ;load return address from stack
+        lw 0 6 neg1 ;load -1 to reg 6
+        add 5 6 5 ;release stack
+        jalr 7 0 ;return
+n       .fill 5
+r       .fill 3
+two     .fill 2
+one     .fill 1
+zero    .fill 0
+neg1    .fill -1
+neg2    .fill -2
+pnrAd   .fill pnr
+bitC    .fill 33
+mulAd   .fill mul
+mlpAd   .fill mLoop

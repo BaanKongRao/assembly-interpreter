@@ -1,35 +1,35 @@
-        lw 0 1 n
-        lw 0 2 r
-        lw 0 6 pnrAd
-        jalr 6 7
-        halt
-pnr     lw 0 6 two
-        add 5 6 5
-        sw 5 7 zero
-        lw 0 6 neg1
-        add 5 6 6
-        sw 6 1 zero
-        beq 2 0 ret1
-        lw 0 6 neg1
-        add 1 6 1
-        add 2 6 2
-        lw 0 6 pnrAd
-        jalr 6 7
-        lw 0 6 neg1
-        add 5 6 6
-        lw 6 1 zero
-        add 3 0 2
-        lw 0 6 mulAd
-        jalr 6 7
-        lw 5 7 zero
-        lw 0 6 neg2
-        add 5 6 5
-        jalr 7 0;
-ret1    lw 5 7 zero
-        lw 0 6 neg2
-        add 5 6 5
-        lw 0 3 one
-        jalr 7 0
+        lw 0 1 n ;load n to reg 1
+        lw 0 2 r ;load r to reg 2
+        lw 0 6 pnrAd ;load permutation to reg 6
+        jalr 6 7 ;call permutation
+        halt ;stop program
+pnr     lw 0 6 two ;load 2 into reg 6
+        add 5 6 5 ;allocate 2 stack slot
+        sw 5 7 zero ;store return address to stack
+        lw 0 6 neg1 ;load -1 to reg 6
+        add 5 6 6 ;calculate stack slot
+        sw 6 1 zero ;store n to stack
+        beq 2 0 ret1 ;check if r = 0 then return 1
+        lw 0 6 neg1 ;load -1 to reg 6
+        add 1 6 1 ;minus reg 1 (n) by 1
+        add 2 6 2 ;minus reg 2 (r) by 1
+        lw 0 6 pnrAd ;load permutation
+        jalr 6 7 ;call permutation
+        lw 0 6 neg1 ;load -1 to reg 6
+        add 5 6 6 ;calculate stack slot
+        lw 6 1 zero ;load n to reg 1
+        add 3 0 2 ;copy result to reg 2
+        lw 0 6 mulAd ;load multiplication
+        jalr 6 7 ;call multiplication
+        lw 5 7 zero ;load return address to reg 7
+        lw 0 6 neg2 ;load -1 to reg 6
+        add 5 6 5 ;release stack
+        jalr 7 0 ;return
+ret1    lw 5 7 zero ;load return address to reg 7
+        lw 0 6 neg2 ;load -2 to reg 6
+        add 5 6 5 ;release stack
+        lw 0 3 one ;load 1 to reg 3(return value)
+        jalr 7 0 ;go back
 mul     lw 0 6 one ;load 1 to reg 6
         add 5 6 5 ;allocate 1 stack slot
         sw 5 7 zero ;store return address into stack
